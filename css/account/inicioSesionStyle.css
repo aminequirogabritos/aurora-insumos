@@ -1,0 +1,20 @@
+h2 {
+    color: #527b89;
+}
+
+.resaltado {
+    font-weight: bold;
+}
+
+div.exterior {
+    border: 2px solid #527b89;
+    border-radius: 7px;
+}
+
+label {
+    padding-top: 10px;
+}
+
+input {
+    padding-bottom: 5px;
+}

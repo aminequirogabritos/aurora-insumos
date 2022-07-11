@@ -1,0 +1,22 @@
+.sidebar {
+  height: 100%;
+  width: 600px;
+  position: fixed;
+  z-index: 1;
+  top: 85px;
+  right: -600px;
+  background-color: white;
+  border: 1px solid #527b89;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  /*     background-color: #111; */
+  /*     color: white; */
+  padding: 10px 15px;
+  border: none;
+}

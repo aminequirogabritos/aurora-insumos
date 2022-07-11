@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="/img/logoAurora.jpeg" type="image/x-icon">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384‐ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Detalle Producto</title>
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="/css/generalStyle.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- scripts -->
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+    <header style="margin-bottom: 7rem; ">
+        <div class="navbar"></div>
+    </header>
+    <main>
+        <div class="exterior container pt-4 my-5 shadow mb-4">
+            <div class="row justify-content-md-center p-1">
+                <div class="container col-md-8  individual-product mb-6">
+
+                    <div class="">
+                        <div class="row">
+
+                            <!-- imagen -->
+                            <div class="col-12 col-md-7 w-100 my-3">
+                                <img class="img-fluid rounded justify-content-center w-100"
+                                    src="/imagenes/productosImg/img1.jpg" alt="">
+
+                            </div>
+
+                            <!-- producto -->
+                            <div class="col-12 col-md-5 my-3 px-3">
+
+                                <div class="h-100 ">
+
+
+                                    <div class="menu d-flex justify-content-start flex-wrap mb-3">
+                                        <a href="#" class="link link-secondary">Productos</a>
+                                        <p class="m-0 text-muted"> > </p>
+                                        <a href="#" class="link link-secondary">Fibro Facil</a>
+                                        <p class="m-0 text-muted"> > </p>
+                                        <a href="#" class="link link-secondary">Caja</a>
+                                    </div>
+
+
+
+                                    <div class="d-flex flex-column w-100 mb-3">
+                                        <!-- descripcion -->
+                                        <h4 class="">Cofre grande 18x14x15cm, acrilicos, servilleta de decoupage
+                                        </h4>
+                                        <h5 class="text-muted"></h5>
+                                        <h5 class="text-muted mb'3">$100</h5>
+
+                                        <small class="text-muted">6 disponibles</small>
+                                    </div>
+
+                                    <div class=" justify-content-center align-self-end w-100">
+                                        <!-- cantidad -->
+                                        <div class="input-group  align-items-center" style="min-width:110px;">
+
+                                            <span class="input-group-btn h-100">
+                                                <button type="button" id="minusButton"
+                                                    class="form-button btn minus d-flex justify-content-center align-items-center"
+                                                    disabled="disabled">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd"
+                                                            d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z" />
+                                                    </svg>
+                                                </button>
+                                            </span>
+
+                                            <div class="col" style="min-width:40px;">
+                                                <input type="number" id="productQuantity"
+                                                    class="form-control input-number text-center" value="1" min="1"
+                                                    oninput="validity.valid||(value='');">
+                                            </div>
+
+                                            <span class="input-Agroup-btn h-100">
+                                                <button type="button" id="plusButton"
+                                                    class="form-button btn plus d-flex justify-content-center align-items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd"
+                                                            d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                                                    </svg>
+                                                </button>
+                                            </span>
+                                        </div>
+
+                                        <div class="botonComprar d-flex gap-2 justify-content-evenly">
+                                            <button class="btn btn-block form-button" type="submit">Agregar al
+                                                carrito</button>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- script -->
+                    <script src="../js/script.js"></script>
+
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+    <div class="footer" style="margin-top: 3rem; opacity:0.9;">
+        <!-- aca va el footer, abajo esta el script -->
+    </div>
+
+</body>
+<script id="trayendoNavbar">
+    $(document).ready(function () {
+        $('.navbar').load("../../html/navbar/navbar.html");
+    });
+</script>
+<script id="trayendoFooter">
+    $(document).ready(function () {
+        $('.footer').load("../../html/footer/footer.html");
+    });
+</script>
+
+</html>

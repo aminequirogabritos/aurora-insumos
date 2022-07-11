@@ -1,0 +1,23 @@
+/* Esta hoja de estilos le da formato a las imagenes 
+    que estan en la pagina acerca de nosotros */
+
+.img-container {
+    width: 300px;;
+    height: 300px;
+    object-fit: hidden;
+}
+
+#galeria .col-lg-4 {
+/*     padding: 20px; */
+    margin: 0 !important;
+}
+
+#galeria img {
+
+    width: 100%;
+    transition: border 0.3s;
+}
+
+#galeria img:hover {
+    border: 5px solid #f7f7f700;
+}

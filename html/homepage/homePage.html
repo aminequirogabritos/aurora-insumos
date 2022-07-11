@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="/img/logoAurora.jpeg" type="image/x-icon">
+
+    <link rel="stylesheet" href="../../css/homepage/homeStyle.css">
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+
+
+    <script src="../../js/navbar/script.js"></script>
+
+
+
+    <title>Home</title>
+</head>
+
+<body>
+    <header style="margin-bottom: 4rem; ">
+        <div class="navbar"></div>
+    </header>
+    <div id="mySidepanel" class="sidepanel">
+        <div id="carrito"></div>
+    </div>
+    <main>
+        <div class="d-flex flex-column justify-content-center w-100 h-100">
+
+            <div class="d-flex flex-column justify-content-center align-items-center mt-2">
+
+                <div class="container mt-4 p-2 bg-dark text-white text-center" style="opacity: 0.7; border-radius:90px">
+                    <h1>Aurora Insumos</h1>
+                </div>
+
+                <!-- Carousel -->
+                <div id="demo" class="container mt-4 carousel slide" data-bs-ride="carousel">
+                    <!-- Indicators/dots -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                    </div>
+
+                    <!-- The slideshow/carousel -->
+                    <div class="container carousel-inner" style="width: 85%;">
+                        <div class="carousel-item active">
+                            <img src="../../imagenes/HomePageImg/im1.png" alt="Los Angeles" class="d-block"
+                                style="width:100%; height: 500px; border-radius: 15px;">
+                            <div class="carousel-caption">
+                                <div class="frase container p-2"
+                                    style="background-color: #527b89; opacity:0.8; width: 45%; border-radius:20px;">
+                                    <p>No guarde nada para una ocasion especial, vivir es una ocasion especial</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../../imagenes/HomePageImg/im2.png" alt="Chicago" class="d-block"
+                                style="width:100%; height: 500px; border-radius: 15px;">
+                            <div class="carousel-caption">
+                                <div class="frase container p-2"
+                                    style="background-color: #527b89; opacity:0.8; width: 45%; border-radius:20px;">
+                                    <p>La creatividad es la inteligencia divirtiendose</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../../imagenes/HomePageImg/im3.png" alt="New York" class="d-block"
+                                style="width:100%; height: 500px; border-radius: 15px;">
+                            <div class="carousel-caption">
+                                <div class="frase container p-2"
+                                    style="background-color: #527b89; opacity:0.8; width: 45%; border-radius:20px;">
+                                    <p>El arte nos permite encontrarnos y perdernos al mismo tiempo</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Left and right controls/icons -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+
+
+                <div class="container bg-dark mt-5 p-3" style="opacity: 0.7; border-radius:15px;">
+                    <h2 class="text-align-center" style="color: white;">Caracteristicas</h2>
+                    <div class="row">
+                        <div class="col-sm-4" style="color: white;">
+                            <h3>Envios</h3>
+                            <p>Realizamos envios dentro de la Ciudad de San Luis.
+                                El coste de este variara dependiendo la zona
+                            </p>
+                        </div>
+                        <div class="col-sm-4" style="color: white;">
+                            <h3>Descuentos</h3>
+                            <p>No solamente existen descuentos en nuestros productos, sino que tambien podes acceder a
+                                descuentos de nuestro taller de arte
+                                y pintura al llevar una compra de mas de $1000
+                            </p>
+
+                        </div>
+                        <div class="col-sm-4" style="color: white;">
+                            <h3>Productos seleccionados</h3>
+                            <p>Poseemos una amplia variedad de productos de alta calidad</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </main>
+    <div class="footer" style="margin-top: 3rem; opacity:0.9;">
+        <!-- aca va el footer, abajo esta el script -->
+    </div>
+
+</body>
+<script id="trayendoNavbar">
+    $(document).ready(function () {
+        $('.navbar').load("../../html/navbar/navbar.html");
+    });
+</script>
+<script id="trayendoFooter">
+    $(document).ready(function () {
+        $('.footer').load("../footer/footer.html");
+    });
+</script>
+
+<script id="trayendoCarrito">
+    $(document).ready(function () {
+        $('.carrito').load("cart/html/carrito.html");
+    });
+</script>
+
+</html>

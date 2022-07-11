@@ -1,0 +1,41 @@
+.menu {
+    margin: auto;
+}
+
+.titulo {
+    color: #527b89;
+}
+
+.mi_padding {
+    padding-top: 9px;
+    padding-bottom: 9px;
+}
+
+.product-card {
+    border: 1.5px solid transparent;
+    transition: all 0.2s;
+}
+
+.product-card:hover {
+    /* transform: scale(1.005); */
+    border: 1.5px solid #527b89;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+
+}
+
+a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.menu a:hover {
+    background-color: #527b89;
+    color: white;
+}
+
+.menu a {
+    text-decoration: none;
+}

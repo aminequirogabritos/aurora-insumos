@@ -1,0 +1,97 @@
+body {
+    background: linear-gradient(-45deg, #8c695f, #78606a, #34778f, #3d7c6d);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* body {
+    antiguo background
+    background: #44A08D;
+    background: -webkit-linear-gradient(to right, #093637, #44A08D);
+    background: linear-gradient(to right, #093637, #44A08D);
+
+    background: #808080;
+    background: -webkit-linear-gradient(to right, #3fada8, #808080);
+    background: linear-gradient(to right, #3fada8, #808080);
+ 
+} */
+
+.exterior {
+    background: rgb(245, 245, 245);
+    border-radius: 5px;
+}
+
+
+/* h2 {
+    color: lightblue;
+} */
+
+.resaltado {
+    font-weight: bold;
+}
+
+/* div {
+    border: 2px solid lightblue; 
+    border-radius: 5px;
+} */
+
+iframe {
+    border: 2px solid #527b89;
+}
+
+ul li {
+    padding-top: 15px;
+    color: #527b89;
+}
+
+ul li p {
+    color: black;
+    font-weight: 300;
+}
+
+ul li p.pregunta {
+    font-weight: 400;
+    font-size: 20px;
+    color: #527b89;
+}
+
+h2 {
+    color: #527b89;
+}
+
+.resaltado {
+    font-weight: bold;
+}
+
+/* div.exterior {
+    border: 2px solid lightblue; 
+    border-radius: 5px;
+} */
+
+label {
+    padding-top: 10px;
+}
+
+input {
+    padding-bottom: 5px;
+}
+
+
+.link {
+    color: #527b89;
+}

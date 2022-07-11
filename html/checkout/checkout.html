@@ -1,0 +1,343 @@
+<!DOCTYPE html><!-- version 5-->
+
+<html>
+
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--, shrink-to-fit=no"-->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384‐ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <title>Checkout</title>
+
+</head>
+
+<body class="js-head-offset head-offset" style="padding-top: 0px;">
+
+
+
+
+    <div class="container">
+        <!-- Contenedor principal -->
+
+
+        <div class="row mb-4 mt-4">
+
+            <div class="col-12 page-title">
+                <h1 class="display-4 text-center pb-4 page-title">Checkout</h1>
+            </div>
+
+            <!-- Productos -->
+            <div class="col-md-4 order-md-2">
+
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span>Carrito</span>
+                    <span class="badge badge-secondary badge-pill" style="background-color:#14888d">2</span>
+                </h4>
+
+
+                <ul class="list-group">
+
+                    <li class="list-group-item">
+                        <div class="product-item">
+                            <div class="d-flex justify-content-between ">
+
+                                <div class="row">
+
+                                    <div class="col-auto d-md-none d-lg-block product-col d-flex align-items-center">
+                                        <div style="max-width:50px;">
+                                            <img class="img-fluid rounded"
+                                                src="file://C:\Users\amine\Desktop\web\aurora\images\image_1.jpg"
+                                                alt="Acrílico Decorativo" style="max-height: 100%; max-width: 100%;">
+                                        </div>
+                                    </div>
+
+                                    <div class="col mr-3">
+                                        <h6 class="my-0">Acrílico Decorativo </h6>
+                                        <small class="text-muted">Verde Cromo x 1</small>
+                                    </div>
+                                </div>
+                                <span class="text-muted">$100,00</span>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li class="list-group-item">
+                        <div class="product-item">
+                            <div class="d-flex justify-content-between ">
+                                <div class="row">
+
+
+
+                                    <div class="col-auto d-md-none d-lg-block product-col d-flex align-items-center">
+                                        <div style="max-width:50px;">
+                                            <img class="img-fluid rounded"
+                                                src="file://C:\Users\amine\Desktop\web\aurora\images\image_2.jpg"
+                                                alt="Espejo Fibrofacil" style="max-height: 100%; max-width: 100%;">
+                                        </div>
+                                    </div>
+
+                                    <div class="col mr-3">
+                                        <h6 class="my-0">Espejo Fibrofacil </h6>
+                                        <small class="text-muted"> x 1</small>
+                                    </div>
+                                </div>
+                                <span class="text-muted">$200,00</span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <h4 class="mb-3"></h4>
+
+                    <li class="mb-3 list-group-item">
+                        <div class="product-item row">
+                            <div class="container d-flex justify-content-between">
+                                <div>
+                                    <h6 class="my-0">Total </h6>
+                                </div>
+
+                                <span>$300,00</span>
+                            </div>
+
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+            <!-- Information -->
+            <div class="col-md-8 order-md-1 mb-6">
+
+                <div id="receiptInfoDiv" style="display: inline;">
+                    <form class="needs-validation active-form" id="receiptInfoForm" onsubmit="return false">
+
+                        <h4 class="mb-3">
+                            Datos de Facturación
+                        </h4>
+
+                        <div class="mb-3">
+
+                            <h6 class="mb-3">
+                                Persona que pagará el pedido
+                            </h6>
+
+                            <div class="row">
+
+                                <div class="col-md-6 mb-3">
+                                    <!-- nombre -->
+                                    <label for="firstName">Nombre</label>
+                                    <input type="text" class="form-control highlight-input" id="firstName"
+                                        name="firstName" value required>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <!-- apellido -->
+                                    <label for="lastName">Apellido</label>
+                                    <input type="text" class="form-control highlight-input" id="lastName"
+                                        name="lastName" value required>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="number">Teléfono</label>
+                                <input type="number" class="form-control highlight-input" id="number" name="number"
+                                    value required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="address">Dirección</label>
+                                <input type="text" class="form-control highlight-input" id="address" name="address"
+                                    value required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email">Email</label>
+                                <input type="text" class="form-control highlight-input" id="email" name="email" value
+                                    required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="dni">DNI</label>
+                                <input type="number" class="form-control highlight-input" id="dni" name="dni"
+                                    value required>
+                            </div>
+
+
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="anotherPersonCheck"
+                                    name="anotherPersonCheck">
+                                <label class="custom-control-label" for="anotherPersonCheck">
+                                    Otra persona va a retirar el pedido
+                                </label>
+                            </div>
+
+                        </div>
+
+                        <div class="mb-3" id="anotherPersonDiv" style="display: none;">
+
+                            <h6 class="mb-3">
+                                Persona que retirará el pedido
+                            </h6>
+
+                            <div class="row">
+
+                                <div class="col-md-6 mb-3">
+                                    <!-- nombre -->
+                                    <label for="firstNameAnotherPerson">Nombre</label>
+                                    <input type="text" class="form-control highlight-input" id="firstNameAnotherPerson"
+                                        name="firstNameAnotherPerson">
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <!-- apellido -->
+                                    <label for="lastNameAnotherPerson">Apellido</label>
+                                    <input type="text" class="form-control highlight-input" id="lastNameAnotherPerson"
+                                        name="lastNameAnotherPerson">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <button class="btn btn-block form-button my-3" type="submit"
+                            id="continueToPaymentButton">Continuar</button>
+
+                    </form>
+                </div>
+
+                <!-- <div id="paymentInfoDiv" style="display: none;">
+
+                    <form class="needs-validation active-form" id="paymentInfoForm" onsubmit="return false">
+
+                        <h4 class="mb-3">
+                            Medio de Pago
+                        </h4>
+
+                        <div class="mb-3">
+
+                            <ul class="list-group custom-control">
+
+                                <li class="list-group-item">
+                                    <div class="custom-radio">
+                                        <input type="radio" class="custom-control-input" id="mercadoPago"
+                                            name="paymentMethod">
+                                        <label class="custom-control-label" for="mercadoPago">
+                                            MercadoPago
+                                        </label>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" class="custom-control-input" id="cash" name="paymentMethod">
+                                        <label class="custom-control-label" for="cash">
+                                            Contado Efectivo
+                                        </label>
+                                    </div>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button class="btn btn-block form-button my-3" id="goBackToreReceipt">Volver</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-block form-button my-3" type="submit">Continuar</button>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div> -->
+
+                <div id="deliveryInfoDiv" style="display: none;">
+
+                    <form class="needs-validation active-form" id="deliveryInfoForm" onsubmit="return false">
+
+                        <h4 class="mb-3">
+                            Entrega
+                        </h4>
+
+                        <ul class="list-group">
+
+                            <li class="list-group-item">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" class="form-control custom-control-input" id="inStore" name="deliveryInfoForm">
+                                    <label class="custom-control-label" for="inStore" value required>
+                                        Retiro por tienda
+                                    </label>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" class="form-control custom-control-input" id="homeDelivery" name="deliveryInfoForm">
+                                    <label class="custom-control-label" for="homeDelivery" value required>
+                                        <div>
+                                            Envío a domicilio
+                                        </div>
+                                        <div>
+                                            <small class="text-muted">Dentro de la ciudad de San Luis</small>
+                                        </div>
+                                    </label>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button class="btn btn-block form-button my-3" id="goBackToDelivery" >Volver</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-block form-button my-3" id="submitInfo" type="submit">Continuar</button>
+                            </div>
+                        </div>
+                        
+                    </form>
+
+                </div>
+
+                <div id="checkoutDiv" style="display: none;">
+
+                    <h4 class="mb-3">
+                        Datos
+                    </h4>
+
+                    <h6>
+                        El pago se realiza en la entrega.
+                    </h6>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+        </div>
+
+    </div>
+
+    <!-- scripts -->
+    <script src="../../js/checkout/script.js"></script>
+
+
+
+</body>
+
+</html>

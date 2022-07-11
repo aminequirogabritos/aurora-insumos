@@ -1,0 +1,375 @@
+<script src="/path/to/jquery.min.js"></script>
+<script src="/path/to/bootstrap.min.js"></script>
+<script src="/path/to/bootstrap-hover-dropdown.min.js"></script>
+
+<!-- script -->
+<script src="../../js/navbar/script.js"></script>
+
+<!-- estilo css -->
+<link rel="stylesheet" href="../../css/navBar/navbarStyle.css">
+<link rel="stylesheet" href="../../css/navbar/sidebar.css">
+<link rel="stylesheet" href="../../css/generalStyle.css">
+
+<link rel="stylesheet" href="../../css/style.css">
+
+<link rel="stylesheet" href="../../css/sucursalStyle.css">
+
+
+
+<!-- google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Tangerine&display=swap" rel="stylesheet">
+
+<!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container-fluid d-flex">
+        <a class="navbar-brand" href="../homepage/homePage.html"
+            style="font-family: 'Tangerine', cursive; font-size: 40px; padding: 5px;">
+            <span class="white">Aurora Insumos</span>
+
+        </a>
+        <!-- botones -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- fin botones -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <!-- homepage -->
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="../homepage/homePage.html">
+                        <span class="white">Home</span></a>
+                </li>
+                <!-- homepage end -->
+                <!-- productos -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="white">Productos</span></a>
+                    </a>
+                    <ul class="dropdown-menu submenu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="../products/Productos2.html"><span
+                            class="white">Todos los productos</span></a></li>
+                            <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="../products/Productos2.html"><span
+                                    class="white">Decoupage</span></a></li>
+                        <li><a class="dropdown-item" href="../products/Productos2.html"><span
+                            class="white">Fibro
+                                    Fácil</span></a></li>
+                        <li><a class="dropdown-item" href="../products/Productos2.html"><span
+                                    class="white">Pinturas</span></a></li>
+
+                        <li><a class="dropdown-item" href="../products/Productos2.html"><span
+                                    class="white">Stencyl</span></a></li>
+                    </ul>
+                </li>
+                <!-- productos end -->
+                <!-- info util -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="white">Información útil</span>
+
+                    </a>
+                    <ul class="dropdown-menu submenu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="../info/nosotros.html"><span class="white">Acerca de
+                                    nosotros</span></a></li>
+                        <li><a class="dropdown-item" href="../info/preguntasFrecuentes.html"><span
+                                    class="white">Preguntas Frecuentes</span></a>
+                        </li>
+                        <li><a class="dropdown-item" href="../info/sucursalYhorarios.html"><span class="white">Sucursal
+                                    y Horarios</span></a></li>
+                    </ul>
+                </li>
+                <!-- info util end -->
+                <!-- contact page -->
+                <li class="nav-item">
+                    <a class="nav-link" href="../contact/Contacto.html"><span class="white">Contacto</span></a></a>
+                </li>
+                <!-- contact page end -->
+            </ul>
+
+
+
+            <div class="container iconos navbar-nav ms-auto mb-2 justify-content-end align-items-center">
+                <!-- icono Ayuda start -->
+                <div class="btn-group" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown"
+                        aria-expanded="false" style="color: white;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white"
+                            class="icono bi bi-chat-left-dots-fill dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="true" data-hover="dropdown" viewBox="0 0 16 16">
+                            <path
+                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793V2zm5 4a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu submenu" aria-labelledby="btnGroupDrop1">
+                        <li><a href="#" class="dropdown-item disabled" style="color: rgb(243, 243, 243);">Informacion de
+                                contacto</a>
+                        </li>
+                        <li><a class="dropdown-item white" href="#">aurorainsumos@gmail.com</a></li>
+                        <li><a class="dropdown-item white" href="#">2664324567</a></li>
+                    </ul>
+                </div>
+                <!-- Icono Ayuda end -->
+                <!-- icono MiCuenta start -->
+                <div class="btn-group" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown"
+                        aria-expanded="false" style="color: white;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="icono bi bi-person-fill dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="true" data-hover="dropdown" viewBox="0 0 16 16">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu submenu" aria-labelledby="btnGroupDrop1">
+                        <li><a href="#" class="dropdown-item disabled" style="color: rgb(243, 243, 243);">Mi
+                                Cuenta</a>
+                        </li>
+                        <li><a href="../account/inicioSesion.html" class="dropdown-item white">Iniciar Sesión</a></li>
+                        <li><a href="../account/registrarse.html" class="dropdown-item white">Registrarse</a></li>
+                    </ul>
+                </div>
+                <!-- Icono MiCuenta end -->
+                <!-- Icono de carrito start -->
+                <button class="openbtn navbar-button" onclick="toggleSidebar()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="white"
+                        class="icono bi bi-cart-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                    </svg>
+                </button>
+
+                <!-- icono carrito end -->
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+<!-- carrito sidebar -->
+<div class=" sidebar p-4 mt-6" id="mySidepanel">
+    <!-- Contenedor principal -->
+
+    <div>
+        <!-- Productos -->
+
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span>Carrito</span>
+            <span class="badge badge-secondary badge-pill">2</span>
+        </h4>
+
+
+
+        <div class="list-group">
+
+            <div class="list-group-item p-3">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <!-- imagen -->
+                    <div class="col-auto h-100" style="max-width:100px;">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <img class="img-fluid h-100 rounded "
+                                src="file://C:\Users\amine\Desktop\web\aurora\images\image_1.jpg"
+                                alt="Acrílico Decorativo">
+                        </div>
+                    </div>
+
+                    <div class="col row">
+
+                        <div class="col-auto d-flex">
+                            <!-- descripcion -->
+                            <div class="d-flex flex-column" style="max-width:100px;">
+                                <h6 class="">Acrílico Decorativo </h6>
+                                <small class="text-muted">Verde Cromo</small>
+                                <small class="text-muted">$100</small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="col mt-3 d-flex flex-column justify-content-center align-items-center"
+                            style="min-width:110px;">
+
+                            <div class="d-flex align-items-center justify-content-center w-100">
+
+                                <!-- cantidad -->
+                                <div class="input-group row d-flex align-items-center" style="width: 100px;">
+
+                                    <span class="input-group-btn h-100 square-button">
+                                        <button type="button"
+                                            class="form-button btn minus d-flex justify-content-center align-items-center"
+                                            disabled="disabled">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z" />
+                                            </svg>
+                                        </button>
+                                    </span>
+
+                                    <div class="col" style="min-width:40px;">
+                                        <input type="number" class="form-control input-number text-center" value="1"
+                                            min="1">
+                                    </div>
+
+                                    <span class="input-group-btn h-100 square-button">
+                                        <button type="button"
+                                            class="form-button btn plus d-flex justify-content-center align-items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                                            </svg>
+                                        </button>
+                                    </span>
+                                </div>
+
+                            </div>
+
+                            <div class="mt-1">
+                                <!-- precio total -->
+                                <span>$100,00 </span>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-auto d-flex justify-content-center align-items-center">
+                        <!-- boton eliminar -->
+                        <div class="shrink-to-fit">
+                            <button type="button"
+                                class="icon-button btn d-flex justify-content-center align-items-center"
+                                style="width:20; height:20;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="list-group-item p-3">
+                <div class="row d-flex justify-content-center align-items-center">
+
+                    <div class="col-auto h-100" style="max-width:100px;">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <img class="img-fluid h-100 rounded " src="../../imagenes/productosImg/img2.jpg"
+                                alt="Espejo Fibrofácil">
+                        </div>
+                    </div>
+
+                    <div class="col row">
+
+                        <div class="col-auto d-flex">
+                            <!-- descripcion -->
+
+                            <div class="d-flex flex-column" style="max-width:100px;">
+                                <h6 class="">Acrílico Decorativo </h6>
+                                <small class="text-muted">Verde Cromo</small>
+                                <small class="text-muted">$100</small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="col mt-3 d-flex flex-column justify-content-center align-items-center"
+                            style="min-width:110px;">
+
+                            <div class="d-flex align-items-center justify-content-center w-100">
+                                <!-- cantidad -->
+                                <div class="input-group row d-flex align-items-center" style="width: 100px;">
+
+                                    <span class="input-group-btn h-100 square-button">
+                                        <button type="button"
+                                            class="form-button btn minus d-flex justify-content-center align-items-center"
+                                            disabled="disabled">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z" />
+                                            </svg>
+                                        </button>
+                                    </span>
+
+                                    <div class="col" style="min-width:40px;">
+                                        <input type="number" class="form-control input-number text-center" value="1"
+                                            min="1">
+                                    </div>
+
+                                    <span class="input-group-btn h-100 square-button">
+                                        <button type="button"
+                                            class="form-button btn plus d-flex justify-content-center align-items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                                            </svg>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="mt-1">
+                                <!-- precio total -->
+                                <span>$100,00 </span>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-auto d-flex justify-content-center align-items-center">
+                        <!-- boton eliminar -->
+                        <div class="shrink-to-fit">
+                            <button type="button"
+                                class="icon-button btn d-flex justify-content-center align-items-center"
+                                style="width:20; height:20;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <h4 class="mb-3"></h4>
+
+            <div class="mb-3 list-group-item">
+                <div class="product-item row">
+                    <div class="container d-flex justify-content-between">
+                        <div>
+                            <h6 class="my-0">Total </h6>
+                        </div>
+                        <span id="total">$300,00</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <form action="../../html/checkout/checkout.html" method="get">
+            <button class="btn btn-block form-button" type="submit">Iniciar compra</button>
+        </form>
+
+
+    </div>
+</div>

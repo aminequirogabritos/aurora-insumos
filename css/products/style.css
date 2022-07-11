@@ -1,0 +1,32 @@
+.individual-product {
+
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+
+}
+
+
+.ver-button {
+    padding: 5px 5px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #527b89;
+    background-color: #ffffff;
+    border: 1.5px solid #527b89;
+    border-radius: 10px;
+}
+
+.ver-button:hover {
+    color: #527b89;
+    border: 1.5px solid #527b89;
+}
+
+.ver-button:active {
+    color: #14888d;
+    border: 1.5px solid #14888d;
+    background-color: #fff !important;
+    transform: translateY(2px) !important;
+    outline: none !important;
+    box-shadow: none;
+}

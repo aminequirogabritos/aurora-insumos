@@ -1,0 +1,309 @@
+<!DOCTYPE html><!-- version 5-->
+
+<html>
+
+<head>
+
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--, shrink-to-fit=no"-->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384‐ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Checkout</title>
+
+</head>
+
+<body class="js-head-offset head-offset" style="padding-top: 0px;">
+
+
+    <div class="container">
+        <!-- Contenedor principal -->
+
+
+        <div class="row mb-4 mt-4">
+
+            <div class="col-md-4 order-md-2">
+                <!-- Productos -->
+
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span>Carrito</span>
+                    <span class="badge badge-secondary badge-pill">2</span>
+                </h4>
+
+
+                <ul class="list-group">
+
+                    <li class="list-group-item">
+                        <div class="product-item">
+                            <div class="d-flex justify-content-between ">
+
+                                <div class="row">
+
+                                    <div class="col-auto d-md-none d-lg-block product-col d-flex align-items-center">
+                                        <div style="max-width:50px;">
+                                            <img class="img-fluid rounded"
+                                                src="file://C:\Users\amine\Desktop\web\aurora\images\image_1.jpg"
+                                                alt="Acrílico Decorativo" style="max-height: 100%; max-width: 100%;">
+                                        </div>
+                                    </div>
+
+                                    <div class="col mr-3">
+                                        <h6 class="my-0">Acrílico Decorativo </h6>
+                                        <small class="text-muted">Verde Cromo x 1</small>
+                                    </div>
+                                </div>
+                                <span class="text-muted">$100,00</span>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li class="list-group-item">
+                        <div class="product-item">
+                            <div class="d-flex justify-content-between ">
+                                <div class="row">
+
+
+
+                                    <div class="col-auto d-md-none d-lg-block product-col d-flex align-items-center">
+                                        <div style="max-width:50px;">
+                                            <img class="img-fluid rounded"
+                                                src="file://C:\Users\amine\Desktop\web\aurora\images\image_2.jpg"
+                                                alt="Espejo Fibrofacil" style="max-height: 100%; max-width: 100%;">
+                                        </div>
+                                    </div>
+
+                                    <div class="col mr-3">
+                                        <h6 class="my-0">Espejo Fibrofacil </h6>
+                                        <small class="text-muted"> x 1</small>
+                                    </div>
+                                </div>
+                                <span class="text-muted">$200,00</span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <h4 class="mb-3"></h4>
+
+                    <li class="mb-3 list-group-item">
+                        <div class="product-item row">
+                            <div class="container d-flex justify-content-between">
+                                <div>
+                                    <h6 class="my-0">Total </h6>
+                                </div>
+
+                                <span>$300,00</span>
+                            </div>
+
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="col-md-8 order-md-1 mb-6">
+                <!-- Information -->
+
+                <div id="clientInfo">
+                    <form class="needs-validation">
+
+                        <div class="mb-3">
+
+                            <h4 class="mb-3">
+                                Datos de Facturación
+                            </h4>
+
+                            <h6 class="mb-3">
+                                Persona que pagará el pedido
+                            </h6>
+
+                            <div class="row">
+
+                                <div class="col-md-6 mb-3">
+                                    <!-- nombre -->
+                                    <label for="firstName">Nombre</label>
+                                    <input type="text" class="form-control highlight-input" id="firstName" value required>
+                                    <div class="invalid-feedback">Ingrese nombre.</div>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <!-- apellido -->
+                                    <label for="lastName">Apellido</label>
+                                    <input type="text" class="form-control highlight-input" id="lastName" value required>
+                                    <div class="invalid-feedback">Ingrese apellido.</div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="firstName">Teléfono</label>
+                                <input type="number" class="form-control highlight-input" id="number" value required>
+                                <div class="invalid-feedback">Ingrese un número válido.</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control highlight-input" id="email" value required>
+                                <div class="invalid-feedback">
+                                    Ingrese un email válido.
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="country">País</label>
+                                <input type="country" class="form-control highlight-input" id="country" value required>
+                                <div class="invalid-feedback">
+                                    Ingrese un país válido.
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="dniCuil">DNI o CUIL</label>
+                                <input type="dniCuil" class="form-control highlight-input" id="dniCuil" value required>
+                                <div class="invalid-feedback">Ingrese un DNI o CUIL válido.</div>
+                            </div>
+
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="save-info">
+                                <label class="custom-control-label" for="save-info">
+                                    Otra persona va a retirar el pedido
+                                </label>
+                            </div>
+
+                        </div>
+
+
+                        <div class="mb-5">
+
+                            <h6 class="mb-3">
+                                Persona que retirará el pedido
+                            </h6>
+
+                            <div class="row">
+
+                                <div class="col-md-6 mb-3">
+                                    <!-- nombre -->
+                                    <label for="firstName">Nombre</label>
+                                    <input type="text" class="form-control highlight-input" id="firstName" value required>
+                                    <div class="invalid-feedback">Ingrese nombre.</div>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <!-- apellido -->
+                                    <label for="lastName">Apellido</label>
+                                    <input type="text" class="form-control highlight-input" id="lastName" value required>
+                                    <div class="invalid-feedback">Ingrese apellido.</div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <button class="btn btn-block form-button" type="submit">Continuar</button>
+
+                    </form>
+                </div>
+
+
+                <div id="paymentInfo">
+
+                    <h4 class="">
+                        Medio de Pago
+                    </h4>
+
+                    <form class="needs-validation form-check">
+                        <ul class="list-group">
+
+
+                            <li class="list-group-item">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" id="mercadoPago" name="paymentMethod">
+                                    <label class="custom-control-label" for="mercadoPago">
+                                        MercadoPago
+                                    </label>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" id="cash" name="paymentMethod">
+                                    <label class="custom-control-label" for="cash">
+                                        Contado Efectivo
+                                    </label>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </form>
+
+                    <div>
+                        <!-- si paga con mecadopago -->
+                        <button class="btn btn-block form-button" type="submit">Continuar a MercadoPago</button>
+                    </div>
+
+                    <div>
+                        <!-- si paga en efectivo -->
+                        <h6 class="mb-3">
+                            
+                        </h6>
+                        <button class="btn btn-block form-button" type="submit">Continuar</button>
+                    </div>
+
+                </div>
+
+
+                <div id="deliveryInfo" class="m-3">
+                    
+                    <h4 class="mb-3">
+                        Entrega
+                    </h4>
+
+                    <form class="needs-validation form-check">
+                        <ul class="list-group">
+
+                            <li class="list-group-item">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" id="inStore" name="delivery">
+                                    <label class="custom-control-label" for="inStore">
+                                        Retiro por tienda
+                                    </label>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" id="homeDelivery" name="delivery">
+                                    <label class="custom-control-label" for="homeDelivery">
+                                        <div>
+                                            Envío a domicilio
+                                        </div>
+                                        <div>
+                                            <small class="text-muted">Dentro de la ciudad de San Luis</small>
+                                        </div>
+                                    </label>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </form>
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+</body>
+
+</html>

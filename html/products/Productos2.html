@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="/img/logoAurora.jpeg" type="image/x-icon">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384‐ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <!-- Axios: Cliente HTTP para hacer las llamadas a la API -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <title>Productos</title>
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="../../css/products/estilos.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/generalStyle.css">
+
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <header style="margin-bottom: 7rem; ">
+        <div class="navbar"></div>
+    </header>
+    <main>
+        <div class="exterior container pt-4 my-5 shadow p-4 mb-4">
+
+
+
+            <div class="container">
+                <div class="row mt-3">
+                    <div class="col-12 col-md-2">
+                        <div class="titulo ">
+                            <h3 class="page-title">Categorías</h3>
+                        </div>
+                        <div class="menu d-flex d-sm-block justify-content-center flex-wrap">
+                            <a href="#" class="link link-secondary">Decoupage</a>
+                            <a href="#" class="link link-secondary">Fibro Facil</a>
+                            <a href="#" class="link link-secondary">Pinturas</a>
+                            <a href="#" class="link link-secondary">Stencyl</a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-10">
+                        <div class="row" id="products-container">
+
+                            <!--                             
+                            <div class="mi_padding col-6 col-md-4 col-lg-3">
+                                <div class="product-card card">
+                                    <img class="card-img-top img-fluid" src="../img/img1.jpg" alt="">
+                                    <div class="card-body">
+                                        <h6 class="card-text text-center">Cofre grande 18x14x15cm, acrilicos, servilleta de decoupage</h6>
+
+                                        <p class="card-text text-muted text-center">$100,00</p>
+
+                                        <div class="d-flex justify-content-evenly">
+                                            <button class="btn btn-block form-button mr-2">Comprar</button>
+                                            <button class="btn btn-block ver-button m-0">Ver</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div> -->
+
+                            <!-- 
+                            <div class="mi_padding col-6 col-md-4 col-lg-3">
+                                <div class="product-card card">
+                                    <img class="card-img-top img-fluid" src="../img/img2.jpg" alt="">
+                                    <div class="card-body">
+                                        <h6 class="card-text text-center">Pinceleta Sintetica n2</h6>
+
+                                        <p class="card-text text-muted text-center">$100,00</p>
+
+                                        <div class="d-flex justify-content-evenly">
+                                            <button class="btn btn-block form-button mr-2">Comprar</button>
+                                            <button class="btn btn-block ver-button m-0">Ver</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="mi_padding col-6 col-md-4 col-lg-3">
+                                <div class="product-card card">
+                                    <img class="card-img-top img-fluid" src="../img/img3.jpg" alt="">
+                                    <div class="card-body">
+                                        <h6 class="card-text text-center">Acrílico BQ</h6>
+
+                                        <p class="card-text text-muted text-center">Violeta 80ml</p>
+                                        <p class="card-text text-muted text-center">$100,00</p>
+
+                                        <div class="d-flex justify-content-evenly">
+                                            <button class="btn btn-block form-button mr-2">Comprar</button>
+                                            <button class="btn btn-block ver-button m-0">Ver</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mi_padding col-6 col-md-4 col-lg-3">
+                                <div class="product-card card">
+                                    <img class="card-img-top img-fluid" src="../img/img4.jpg" alt="">
+                                    <div class="card-body">
+                                        <h6 class="card-text text-center">Fibrofácil (...), servilletas decoupage, Acrílico BQ</h6>
+
+                                        <p class="card-text text-muted text-center">$100,00</p>
+
+                                        <div class="d-flex justify-content-evenly">
+                                            <button class="btn btn-block form-button mr-2">Comprar</button>
+                                            <button class="btn btn-block ver-button m-0">Ver</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="mi_padding col-6 col-md-4 col-lg-3">
+                                <div class="product-card card">
+                                    <img class="card-img-top img-fluid" src="../img/img5.jpg" alt="">
+                                    <div class="card-body">
+                                        <h6 class="card-text text-center">Cofre grande 18x14x15cm, acrilicos, servilleta de decoupage</h6>
+
+                                        <p class="card-text text-muted text-center">$100,00</p>
+
+                                        <div class="d-flex justify-content-evenly">
+                                            <button class="btn btn-block form-button mr-2">Comprar</button>
+                                            <button class="btn btn-block ver-button m-0">Ver</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mi_padding col-6 col-md-4 col-lg-3">
+                                <div class="product-card card">
+                                    <img class="card-img-top img-fluid" src="../img/img6.jpg" alt="">
+                                    <div class="card-body">
+                                        <h6 class="card-text text-center">Pinceleta Sintetica n2</h6>
+
+                                        <p class="card-text text-muted text-center">$100,00</p>
+
+                                        <div class="d-flex justify-content-evenly">
+                                            <button class="btn btn-block form-button mr-2">Comprar</button>
+                                            <button class="btn btn-block ver-button m-0">Ver</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mi_padding col-6 col-md-4 col-lg-3">
+                                <div class="product-card card">
+                                    <img class="card-img-top img-fluid" src="../img/img7.jpg" alt="">
+                                    <div class="card-body">
+                                        <h6 class="card-text text-center">Acrílico BQ</h6>
+
+                                        <p class="card-text text-muted text-center">Violeta 80ml</p>
+                                        <p class="card-text text-muted text-center">$100,00</p>
+
+                                        <div class="d-flex justify-content-evenly">
+                                            <button class="btn btn-block form-button mr-2">Comprar</button>
+                                            <button class="btn btn-block ver-button m-0">Ver</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mi_padding col-6 col-md-4 col-lg-3">
+                                <div class="product-card card">
+                                    <img class="card-img-top img-fluid" src="../img/img8.jpg" alt="">
+                                    <div class="card-body">
+                                        <h6 class="card-text text-center">Fibrofácil (...), servilletas decoupage, Acrílico BQ</h6>
+
+                                        <p class="card-text text-muted text-center">$100,00</p>
+
+                                        <div class="d-flex justify-content-evenly">
+                                            <button class="btn btn-block form-button mr-2">Comprar</button>
+                                            <button class="btn btn-block ver-button m-0">Ver</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+ -->
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </main>
+
+
+    <div class="footer" style="margin-top: 3rem; opacity:0.9;">
+        <!-- aca va el footer, abajo esta el script -->
+    </div>
+
+
+
+
+
+    <script src="../../js/products/scriptProductos.js"></script>
+
+</body>
+
+<script id="trayendoNavbar">
+    $(document).ready(function () {
+        $('.navbar').load("../../html/navbar/navbar.html");
+    });
+</script>
+<script id="trayendoFooter">
+    $(document).ready(function () {
+        $('.footer').load("../../html/footer/footer.html");
+    });
+</script>
+
+
+</html>
