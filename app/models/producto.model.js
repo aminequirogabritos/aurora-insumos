@@ -52,7 +52,8 @@ Producto.createProducto = (newProducto, result) => {
   
 // find Producto by id
 Producto.findProductoById = (id, result) => {
-  sql.query(`SELECT * FROM producto WHERE idProducto = ${id}`, (err, res) => {
+  sql.query("SELECT * FROM producto WHERE idProducto = ?", [id], (err, res) => {
+    console.log("THIS IS A MESSAGE, "+id);
     if (err) {
       console.log("error: ", err);
       result(err, null);
@@ -67,6 +68,9 @@ Producto.findProductoById = (id, result) => {
     result({ kind: "not_found" }, null);
   });
 };
+
+
+
 
 
 Producto.getAllProductos = (title, result) => {
@@ -117,8 +121,11 @@ Producto.updateProductoStockById = (id, producto, result) => {
   );
 };
 
-/* Producto.removeProducto = (id, result) => {
-  sql.query("DELETE FROM producto WHERE idProducto = ?", id, (err, res) => {
+
+
+
+Producto.removeProducto = (id, result) => {
+  sql.query("DELETE FROM producto WHERE idProducto = ?", [id], (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);
@@ -132,7 +139,7 @@ Producto.updateProductoStockById = (id, producto, result) => {
     console.log("deleted producto with id: ", id);
     result(null, res);
   });
-}; */
+};
 
 /*
 Producto.removeAll = result => {

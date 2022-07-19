@@ -137,21 +137,21 @@ exports.updateProductoStock = (req, res) => {
 }; */
 
 // Delete a Producto with the specified id in the request
-/* exports.deleteProducto = (req, res) => {
-    Producto.removeProducto(req.params.idProducto, (err, data) => {
+exports.deleteProducto = (req, res) => {
+    Producto.removeProducto(req.params.id, (err, data) => {
         if (err) {
             if (err.kind === "not_found") {
                 res.status(404).send({
-                    message: `Not found Producto with id ${req.params.idProducto}.`
+                    message: `Not found Producto with id ${req.params.id}.`
                 });
             } else {
                 res.status(500).send({
-                    message: "Could not delete Producto with id " + req.params.idProducto
+                    message: "Could not delete Producto with id " + req.params.id
                 });
             }
         } else res.send({ message: `Producto was deleted successfully!` });
     });
-}; */
+};
 
 // Delete all Productos from the database.
 /* exports.deleteAll = (req, res) => {

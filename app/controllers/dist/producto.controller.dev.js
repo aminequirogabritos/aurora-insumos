@@ -125,22 +125,24 @@ exports.updateProductoStock = function (req, res) {
 }; */
 // Delete a Producto with the specified id in the request
 
-/* exports.deleteProducto = (req, res) => {
-    Producto.removeProducto(req.params.idProducto, (err, data) => {
-        if (err) {
-            if (err.kind === "not_found") {
-                res.status(404).send({
-                    message: `Not found Producto with id ${req.params.idProducto}.`
-                });
-            } else {
-                res.status(500).send({
-                    message: "Could not delete Producto with id " + req.params.idProducto
-                });
-            }
-        } else res.send({ message: `Producto was deleted successfully!` });
+
+exports.deleteProducto = function (req, res) {
+  Producto.removeProducto(req.params.id, function (err, data) {
+    if (err) {
+      if (err.kind === "not_found") {
+        res.status(404).send({
+          message: "Not found Producto with id ".concat(req.params.id, ".")
+        });
+      } else {
+        res.status(500).send({
+          message: "Could not delete Producto with id " + req.params.id
+        });
+      }
+    } else res.send({
+      message: "Producto was deleted successfully!"
     });
-}; */
-// Delete all Productos from the database.
+  });
+}; // Delete all Productos from the database.
 
 /* exports.deleteAll = (req, res) => {
     Producto.removeAll((err, data) => {

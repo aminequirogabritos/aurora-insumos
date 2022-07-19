@@ -15,7 +15,6 @@ module.exports = function (app) {
 
   router.put("/:id", productos.updateProductoStock); //delete a product
 
-  /*     router.delete("/:id". productos.deleteProducto); */
-
+  router["delete"]("/:id", productos.deleteProducto);
   app.use('/api/producto', router);
 };
