@@ -192,3 +192,14 @@ con.connect(function (err) {
     console.log("Table Producto updated");
   });
 }); */
+
+con.connect(function (err) {
+  if (err) throw err;
+  console.log("Connected!");
+  var sql = "delete from producto where idProducto=5;";
+  con.query(sql, function (err, result) {
+    console.log(result);
+    if (err) throw err;
+    console.log("Table Producto updated");
+  });
+});

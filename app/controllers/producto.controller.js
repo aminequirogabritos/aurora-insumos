@@ -86,7 +86,7 @@ exports.updateProductoStock = (req, res) => {
         });
     }
     console.log(req.body);
-    Producto.updateProductoStockById(
+    Producto.updateProductoStockById( 
         req.params.id,
         new Producto(req.body),
         (err, data) => {

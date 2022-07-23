@@ -1,0 +1,63 @@
+const { request } = require("express")
+
+[
+    {
+        "idProducto": "C:\\Users\\amine\\Desktop\\web\\aurora\\auroraInsumos_v2\\imagenes\\productos\\img11.jpg",
+        "nombreProducto": "Servilletas Decoupage",
+        "descripcionProducto": "Navideñas",
+        "precioProducto": 150,
+        "stockProducto": 204,
+        "idCategoria": 1
+    },
+    {
+        "idProducto": "C:\\Users\\amine\\Desktop\\web\\aurora\\auroraInsumos_v2\\imagenes\\productos\\img3.jpg",
+        "nombreProducto": "Acrílico",
+        "descripcionProducto": "",
+        "precioProducto": 200,
+        "stockProducto": 58,
+        "idCategoria": 2
+    },
+    {
+        "idProducto": "C:\\Users\\amine\\Desktop\\web\\aurora\\auroraInsumos_v2\\imagenes\\productos\\img4.jpg",
+        "nombreProducto": "Producto",
+        "descripcionProducto": "",
+        "precioProducto": 240,
+        "stockProducto": 204,
+        "idCategoria": 2
+    }
+]
+
+
+
+[
+    {
+        "idProducto": "img11",
+        "nombreProducto": "Servilletas Decoupage",
+        "descripcionProducto": "Navideñas",
+        "precioProducto": 150,
+        "stockProducto": 204,
+        "idCategoria": 1
+    },
+    {
+        "idProducto": "img3",
+        "nombreProducto": "Acrílico",
+        "descripcionProducto": "",
+        "precioProducto": 200,
+        "stockProducto": 58,
+        "idCategoria": 2
+    },
+    {
+        "idProducto": "img4",
+        "nombreProducto": "Producto",
+        "descripcionProducto": "",
+        "precioProducto": 240,
+        "stockProducto": 204,
+        "idCategoria": 2
+    }
+]
+
+
+
+Para hacer request
+
+http://localhost:8080/api/producto/idProducto?=C:\\Users\\amine\\Desktop\\web\\aurora\\auroraInsumos_v2\\imagenes\\productos\\img11.jpg
