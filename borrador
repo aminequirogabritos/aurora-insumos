@@ -61,3 +61,27 @@ const { request } = require("express")
 Para hacer request
 
 http://localhost:8080/api/producto/idProducto?=C:\\Users\\amine\\Desktop\\web\\aurora\\auroraInsumos_v2\\imagenes\\productos\\img11.jpg
+
+
+[
+    {
+        "idCategoria": 1,
+        "nombreCategoria": "Decoupage",
+        "descripcionCategoria": ""
+    },
+    {
+        "idCategoria": 2,
+        "nombreCategoria": "Pinturas",
+        "descripcionCategoria": ""
+    },
+    {
+        "idCategoria": 3,
+        "nombreCategoria": "Fibrofácil",
+        "descripcionCategoria": ""
+    },
+    {
+        "idCategoria": 4,
+        "nombreCategoria": "Stencyl",
+        "descripcionCategoria": ""
+    }
+]

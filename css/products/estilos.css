@@ -39,3 +39,13 @@ a {
 .menu a {
     text-decoration: none;
 }
+
+.categoryList .ct_item-active {
+    color: white;
+    background-color: #456570;
+}
+
+/* animacion de product */
+.productList .productItem {
+    transition: all .4s;
+}

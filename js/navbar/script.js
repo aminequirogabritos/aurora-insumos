@@ -1,6 +1,6 @@
 
 
-$(document).ready(function () {
+/* $(document).ready(function () {
     $("#sidebar").mCustomScrollbar({
         theme: "minimal"
     });
@@ -21,9 +21,17 @@ $(document).ready(function () {
         $('a[aria-expanded=true]').attr('aria-expanded', 'false');
     });
 });
+ */
 
+var sidepanel;
 
-
+if (document.readyState !== 'loading') {
+    sidepanel = document.getElementById("mySidepanel");
+} else {
+    document.addEventListener('DOMContentLoaded', function () {
+        sidepanel = document.getElementById("mySidepanel");
+    });
+}
 
 function resizeScreen() {
     let w = document.documentElement.clientWidth;
@@ -35,13 +43,10 @@ function resizeScreen() {
 window.addEventListener('resize', resizeScreen);
 
 function toggleSidebar() {
-    var d = document.getElementById("mySidepanel");
-
-
-    if (d.style.right == "0px") {
-       d.style.right = "-600px";
+    if (sidepanel.style.right == "0px") {
+        sidepanel.style.right = "-600px";
     }
     else {
-        d.style.right = "0px";
+        sidepanel.style.right = "0px";
     }
 }

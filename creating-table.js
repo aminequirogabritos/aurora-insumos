@@ -169,20 +169,28 @@ con.connect(function (err) {
 
 
 
-
-
-
-
-
-
 /* con.connect(function (err) {
   if (err) throw err;
   console.log("Connected!");
-  var sql = "DROP TABLE venta;";
+  var sql = "DROP TABLE detalle;";
 
   con.query(sql, function (err, result) {
     if (err) throw err;
-    console.log("Table venta deleted");
+    console.log("Table detalle deleted");
+  });
+});
+ */
+
+
+/* 
+con.connect(function (err) {
+  if (err) throw err;
+  console.log("Connected!");
+  var sql = "DROP TABLE producto;";
+
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("Table producto deleted");
   });
 }); */
 
@@ -199,27 +207,79 @@ con.connect(function (err) {
   });
 }); */
 
+/* con.connect(function (err) {
+  if (err) throw err;
+  console.log("Connected!");
+  var sql =
+    "CREATE TABLE IF NOT EXISTS `aurorainsumosdb`.`Producto` ("+
+    "  `idProducto` VARCHAR(100) NOT NULL,"+
+    "  `nombreProducto` VARCHAR(50) NOT NULL,"+
+    "  `descripcionProducto` VARCHAR(80) NULL,"+
+    "  `precioProducto` INT NOT NULL,"+
+    "  `stockProducto` INT NOT NULL,"+
+    "  `idCategoria` INT NOT NULL,"+
+    "  PRIMARY KEY (`idProducto`),"+
+    "  UNIQUE INDEX `idProducto_UNIQUE` (`idProducto` ASC) VISIBLE,"+
+    "  INDEX `idCategoria_idx` (`idCategoria` ASC) VISIBLE,"+
+    "  CONSTRAINT `idCategoria`"+
+    "    FOREIGN KEY (`idCategoria`)"+
+    "    REFERENCES `aurorainsumosdb`.`Categoria` (`idCategoria`)"+
+    "    ON DELETE CASCADE"+
+    "    ON UPDATE CASCADE)"+
+    "ENGINE = InnoDB";
+
+  con.query(sql, function (err, result) {
+    console.log(result);
+    if (err) throw err;
+    console.log("Table Producto created");
+  });
+
+}); */
+
 
 /* con.connect(function (err) {
   if (err) throw err;
   console.log("Connected!");
-  var sql ="delete from producto where idCategoria=3;";
+  var sql =
+    "CREATE TABLE IF NOT EXISTS `aurorainsumosdb`.`Detalle` ("+
+    "  `idDetalle` INT NOT NULL AUTO_INCREMENT,"+
+    "  `idVenta` INT NOT NULL,"+
+    "  `idProducto` VARCHAR(100) NOT NULL,"+
+    "  `cantidadDetalle` INT NOT NULL,"+
+    "  `precioDetalle` INT NOT NULL,"+
+    "  PRIMARY KEY (`idDetalle`),"+
+    "  UNIQUE INDEX `idDetalleCompra_UNIQUE` (`idDetalle` ASC) VISIBLE,"+
+    "  UNIQUE INDEX `idFactura_UNIQUE` (`idVenta` ASC) VISIBLE,"+
+    "  UNIQUE INDEX `idProducto_UNIQUE` (`idProducto` ASC) VISIBLE,"+
+    "  CONSTRAINT `idFactura`"+
+    "    FOREIGN KEY (`idVenta`)"+
+    "    REFERENCES `aurorainsumosdb`.`Venta` (`idVenta`)"+
+    "    ON DELETE CASCADE"+
+    "    ON UPDATE CASCADE,"+
+    "  CONSTRAINT `idProducto`"+
+    "    FOREIGN KEY (`idProducto`)"+
+    "    REFERENCES `aurorainsumosdb`.`Producto` (`idProducto`)"+
+    "    ON DELETE NO ACTION"+
+    "    ON UPDATE NO ACTION)"+
+    "ENGINE = InnoDB"
+  ;
 
   con.query(sql, function (err, result) {
     console.log(result);
     if (err) throw err;
-    console.log("Table Producto updated");
+    console.log("Table Detalle created");
   });
+
 }); */
+
 
 con.connect(function (err) {
   if (err) throw err;
   console.log("Connected!");
-  var sql ="delete from producto where idProducto=5;";
+  var sql = `update producto set idCategoria=3 where idProducto="img4";`;
 
   con.query(sql, function (err, result) {
-    console.log(result);
     if (err) throw err;
-    console.log("Table Producto updated");
+    console.log("Table producto deleted");
   });
 });

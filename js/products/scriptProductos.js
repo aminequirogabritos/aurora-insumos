@@ -1,6 +1,8 @@
 
 /////////////////////// PRODUCTOS ///////////////////////////////
 
+var imageSource;
+
 var todasLasCategorias;
 
 function devolverCategoria(id) {
@@ -247,8 +249,8 @@ function addEventToBuyButtons() {
             
             const button = e.target;    //works
             const productCard = button.closest('.product-card');
-            console.log("🚀 ~ file: scriptProductos.js ~ line 250 ~ buyButton.addEventListener ~ productCard", productCard)
-            
+
+            const productImg = productCard.querySelector('.card-img-top').getAttribute('src');
 
         });
     });

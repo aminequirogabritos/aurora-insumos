@@ -1,24 +1,36 @@
 "use strict";
 
-$(document).ready(function () {
-  $("#sidebar").mCustomScrollbar({
-    theme: "minimal"
-  });
-  $('#dismiss, .overlay').on('click', function () {
-    // hide sidebar
-    $('#sidebar').removeClass('active'); // hide overlay
+/* $(document).ready(function () {
+    $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+    });
 
-    $('.overlay').removeClass('active');
-  });
-  $('#sidebarCollapse').on('click', function () {
-    // open sidebar
-    $('#sidebar').addClass('active'); // fade in the overlay
+    $('#dismiss, .overlay').on('click', function () {
+        // hide sidebar
+        $('#sidebar').removeClass('active');
+        // hide overlay
+        $('.overlay').removeClass('active');
+    });
 
-    $('.overlay').addClass('active');
-    $('.collapse.in').toggleClass('in');
-    $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-  });
+    $('#sidebarCollapse').on('click', function () {
+        // open sidebar
+        $('#sidebar').addClass('active');
+        // fade in the overlay
+        $('.overlay').addClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+    });
 });
+ */
+var sidepanel;
+
+if (document.readyState !== 'loading') {
+  sidepanel = document.getElementById("mySidepanel");
+} else {
+  document.addEventListener('DOMContentLoaded', function () {
+    sidepanel = document.getElementById("mySidepanel");
+  });
+}
 
 function resizeScreen() {
   var w = document.documentElement.clientWidth;
@@ -31,11 +43,9 @@ function resizeScreen() {
 window.addEventListener('resize', resizeScreen);
 
 function toggleSidebar() {
-  var d = document.getElementById("mySidepanel");
-
-  if (d.style.right == "0px") {
-    d.style.right = "-600px";
+  if (sidepanel.style.right == "0px") {
+    sidepanel.style.right = "-600px";
   } else {
-    d.style.right = "0px";
+    sidepanel.style.right = "0px";
   }
 }

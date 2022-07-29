@@ -1,41 +1,42 @@
 var minusButton = document.getElementById("minusButton");
 var plusButton = document.getElementById("plusButton");
 var productQuantity = document.getElementById("productQuantity");
+var addToCartButton = document.getElementById("addToCartButton");
+var productListDiv = document.getElementById("product-list");
+var itemImageDiv = document.getElementById("itemImage");
+var itemDescDiv = document.getElementById("itemDesc");
+var productsListDiv = document.getElementById("product-list");
 
 /////////////////////// PRODUCTO INDIVIDUAL ///////////////////////////////
 
+var productId;
+
+var stock;
+var quantity;
+
+var cart;
+
+
+//window.onload = function(){
+// traer el id de producto de localStorage para poder buscarlo en la bd
+productId = localStorage['productId'];
+console.log(productId);
+localStorage.removeItem('productId');
+console.log(productId);
+
+//}
+
+
+window.onbeforeunload = function () {
+    //guardar id de producto antes de recargar
+    localStorage.setItem('productId', productId);
+}
+
+//
+
 minusButton.addEventListener('click', (
     function (e) {
-
-        /*
-        var mysql = require('mysql');
-        
-                var con = mysql.createConnection({
-                    host: "localhost",
-                    user: "root",
-                    password: "abc123",
-                    database: "PBSC_Parking_DB"
-                });
-            
-                con.connect(function (err) {
-                    if (err) throw err;
-                    console.log("connected");
-                });
-            
-                var sql = "??";
-                con.query(sql, function (err, result) {
-                    if (err) {
-                        throw err;
-            
-                    }
-            
-                    console.log(result.affectedRows + " record(s) updated");
-                });
-        */
-
         // si el numero de productQuantity es mayor o igual a 1, decremento
-
-        var stock = 6;
 
         if (productQuantity.value > 1) {
             productQuantity.value = parseInt(productQuantity.value) - 1;
@@ -52,38 +53,9 @@ minusButton.addEventListener('click', (
 
 plusButton.addEventListener('click', (
     function (e) {
-
-        /*  var mysql = require('mysql');
-        
-                var con = mysql.createConnection({
-                    host: "localhost",
-                    user: "root",
-                    password: "abc123",
-                    database: "PBSC_Parking_DB"
-                });
-            
-                con.connect(function (err) {
-                    if (err) throw err;
-                    console.log("connected");
-                });
-            
-                var sql = "??";
-                con.query(sql, function (err, result) {
-                    if (err) {
-                        throw err;
-            
-                    }
-            
-                    console.log(result.affectedRows + " record(s) updated");
-                }); */
-
-        var stock = 6;
-
-        /* var sql = "INSERT INTO accounts (UserName, FirstName, LastName, Email, UserPassword) VALUES ('" + userName + "', '" + firstName + "','" + lastName + "','" + email + "','" + psw + "')"; */
-
         // si hay stock, incremento
 
-        if (1 && parseInt(productQuantity.value) < stock) {
+        if (parseInt(productQuantity.value) < stock) {
             productQuantity.value = parseInt(productQuantity.value) + 1;
 
             if (productQuantity.value > 1) {
@@ -93,26 +65,17 @@ plusButton.addEventListener('click', (
             if (productQuantity.value == stock)
                 plusButton.setAttribute('disabled', 'disabled');
         }
+        quantity = parseInt(productQuantity.value);
     }
 )
 )
-
 
 
 productQuantity.addEventListener('input', function (e) {
 
     // obtener stock de la DB
 
-    var stock = 6;
-
     var value = parseInt(productQuantity.value);
-
-    /*     if (value <= 1){
-            minusButton.setAttribute('disabled', 'disabled');
-            productQuantity.value = 1;
-        }
-        else
-            minusButton.removeAttribute('disabled'); */
 
     if (productQuantity.value > stock)
         productQuantity.value = 1;
@@ -126,123 +89,130 @@ productQuantity.addEventListener('input', function (e) {
         plusButton.removeAttribute('disabled');
     }
 
+    quantity = parseInt(productQuantity.value);
+
 }
 )
 
 
 
-function saveAccount() {
-    var mysql = require('mysql');
+const cartItem = (producto) => {
 
-    var con = mysql.createConnection({
-        host: "localhost",
-        user: "root",
-        password: "abc123",
-        database: "PBSC_Parking_DB"
-    });
+    const card = document.createElement("div");
+    card.className = "list-group-item p-3";
+    card.style = "max-width:100px;";
 
-    con.connect(function (err) {
-        if (err) throw err;
-        console.log("connected");
-    });
+    const contenido = `
 
-    var firstName = document.getElementById("firstName");
-    var lastName = document.getElementById("lastName");
-    var psw = document.getElementById("psw");
-    var userName = document.getElementById("userName");
-    var email = document.getElementById("inputText");
+        <div class="row d-flex justify-content-center align-items-center">
+            <!-- imagen -->
+            <div class="col-auto h-100" style="max-width:100px;" id="itemImage">
+                <!-- imagen  -->
+                <div class="d-flex justify-content-center align-items-center" >
+                    <img class="img-fluid h-100 rounded "
+                    src="file://C:\\Users\\amine\\Desktop\\web\\aurora\\images\\${producto.idProducto}.jpg"
+                    alt="Acrílico Decorativo">
+                </div>
+            </div>
 
-    var sql = "INSERT INTO accounts (UserName, FirstName, LastName, Email, UserPassword) VALUES ('" + userName + "', '" + firstName + "','" + lastName + "','" + email + "','" + psw + "')";
+            <div class="col row">
+
+                <div class="col-auto d-flex" id="itemDesc">
+                    <!-- descripcion -->
+                        <div class="d-flex flex-column" style="max-width:100px;">
+                        <h6 class="">${producto.nombreProducto}</h6>
+                        <small class="text-muted">${producto.descripcionProducto}</small>
+                        <small class="text-muted">$${producto.precioProducto}</small>
+                    </div>
+                    
+                </div>
 
 
-    con.query(sql, function (err, result) {
-        if (err) {
-            throw err;
+                <div class="col mt-3 d-flex flex-column justify-content-center align-items-center"
+                    style="min-width:110px;">
 
-        }
+                    <div class="d-flex align-items-center justify-content-center w-100">
 
-        console.log(result.affectedRows + " record(s) updated");
-    });
+                        <!-- cantidad -->
+                        <div class="input-group row d-flex align-items-center" style="width: 100px;">
+
+                            <span class="input-group-btn h-100 square-button">
+                                <button type="button"
+                                    class="form-button btn minus d-flex justify-content-center align-items-center"
+                                    disabled="disabled">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z" />
+                                    </svg>
+                                </button>
+                            </span>
+
+                            <div class="col" style="min-width:40px;">
+                                <input type="number" class="form-control input-number text-center" value="1"
+                                    min="1">
+                            </div>
+
+                            <span class="input-group-btn h-100 square-button">
+                                <button type="button"
+                                    class="form-button btn plus d-flex justify-content-center align-items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                                    </svg>
+                                </button>
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="mt-1">
+                        <!-- precio total -->
+                        <span>$100,00 </span>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="col-auto d-flex justify-content-center align-items-center">
+                <!-- boton eliminar -->
+                <div class="shrink-to-fit">
+                    <button type="button"
+                        class="icon-button btn d-flex justify-content-center align-items-center"
+                        style="width:20; height:20;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    `;
+
+    card.innerHTML = contenido;
+    return card;
+
+
 }
 
 
 
-//      traer un producto de la bd
 
-
-
-
-
-const mostrarProducto = (idProducto, nombreProducto, descripcionProducto, precioProducto) => {
+const productListItemImage = (producto) => {
 
     const card = document.createElement("div");
-    card.className = "mi_padding col-6 col-md-4 col-lg-3";
+    card.className = "d-flex justify-content-center align-items-center" ;
 
     const contenido = `
-    <div class="h-100 ">
-
-    <div class="menu d-flex justify-content-start flex-wrap mb-3">
-        <a href="#" class="link link-secondary">Productos</a>
-        <p class="m-0 text-muted"> > </p>
-        <a href="#" class="link link-secondary">Fibro Facil</a>
-        <p class="m-0 text-muted"> > </p>
-        <a href="#" class="link link-secondary">Caja</a>
-    </div>
-
-
-
-    <div class="d-flex flex-column w-100 mb-3">
-        <!-- descripcion -->
-        <h4 class="">Cofre grande 18x14x15cm, acrilicos, servilleta de decoupage
-        </h4>
-        <h5 class="text-muted"></h5>
-        <h5 class="text-muted mb'3">$100</h5>
-
-        <small class="text-muted">6 disponibles</small>
-    </div>
-
-    <div class=" justify-content-center align-self-end w-100">
-        <!-- cantidad -->
-        <div class="input-group  align-items-center" style="min-width:110px;">
-
-            <span class="input-group-btn h-100">
-                <button type="button" id="minusButton"
-                    class="form-button btn minus d-flex justify-content-center align-items-center"
-                    disabled="disabled">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                        fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z" />
-                    </svg>
-                </button>
-            </span>
-
-            <div class="col" style="min-width:40px;">
-                <input type="number" id="productQuantity"
-                    class="form-control input-number text-center" value="1" min="1"
-                    oninput="validity.valid||(value='');">
-            </div>
-
-            <span class="input-Agroup-btn h-100">
-                <button type="button" id="plusButton"
-                    class="form-button btn plus d-flex justify-content-center align-items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                        fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
-                    </svg>
-                </button>
-            </span>
-        </div>
-
-        <div class="botonComprar d-flex gap-2 justify-content-evenly">
-            <button class="btn btn-block form-button" type="submit">Agregar al
-                carrito</button>
-        </div>
-
-    </div>
-
-</div>
+    <img class="img-fluid h-100 rounded "
+    src="file://C:\\Users\\amine\\Desktop\\web\\aurora\\images\\${producto.idProducto}.jpg"
+    alt="Acrílico Decorativo">
     `;
 
     card.innerHTML = contenido;
@@ -254,21 +224,102 @@ const mostrarProducto = (idProducto, nombreProducto, descripcionProducto, precio
 
 
 
-const table = document.getElementById("product-container");
+const productListItemDesc = (producto) => {
 
+    const card = document.createElement("div");
+    card.className = "list-group-item p-3";
+    card.style = "max-width:100px;";
+
+    const contenido = `
+    <h6 class="">${producto.nombreProducto}</h6>
+    <small class="text-muted">${producto.descripcionProducto}</small>
+    <small class="text-muted">$${producto.precioProducto}</small>
+    `;
+
+    card.innerHTML = contenido;
+    return card;
+
+}
+
+
+addToCartButton.addEventListener('click', (
+    function (e) {
+        const productoIndividual = () => {
+            const promise = new Promise((resolve, reject) => {
+        
+                const http = new XMLHttpRequest();
+                http.open("GET", "http://localhost:8080/api/producto/" + productId);
+        
+                http.send();
+        
+                http.onload = function () {
+                    const response = JSON.parse(http.response);
+                    if (http.status >= 400) {
+                        reject(response);
+                    } else {
+                        resolve(response);
+                    }
+                }
+            });
+            return promise;
+        };
+        
+        productoIndividual().then((data) => {
+            console.log(productsListDiv);
+            productsListDiv.appendChild(cartItem(data));
+        }).catch((error) => alert("error!!!!!!!!!!!!"));
+    }
+
+));
+
+const productInfo = (producto) => {
+
+    const card = document.createElement("div");
+
+    const contenido = `
+
+        <h4 class="">${producto.nombreProducto}
+        </h4>
+        <h5 class="text-muted">${producto.descripcionProducto}</h5>
+        <h5 class="text-muted mb'3">$${producto.precioProducto}</h5>
+
+        <small class="text-muted">${producto.stockProducto} disponibles</small>
+
+    `;
+
+    card.innerHTML = contenido;
+    return card;
+
+}
+
+
+const productImage = (producto) => {
+
+    const card = document.createElement("div");
+
+    const contenido = `
+
+        <img class="img-fluid rounded justify-content-center w-100"
+            src="C:\\Users\\amine\\Desktop\\web\\aurora-insumos\\imagenes\\productosImg\\${producto.idProducto}.jpg" alt="">
+    `;
+
+    card.innerHTML = contenido;
+    return card;
+
+}
+
+const productInfoDiv = document.getElementById("product-info");
+const productImageDiv = document.getElementById("product-image");
+
+//      traer un producto de la bd      //
 
 const productoIndividual = () => {
     const promise = new Promise((resolve, reject) => {
 
         const http = new XMLHttpRequest();
-
-        http.open("GET", "http://localhost:8080/api/producto");
-
-        console.log(http.response);
+        http.open("GET", "http://localhost:8080/api/producto/" + productId);
 
         http.send();
-
-        console.log(http.response);
 
         http.onload = function () {
             const response = JSON.parse(http.response);
@@ -283,9 +334,10 @@ const productoIndividual = () => {
 };
 
 productoIndividual().then((data) => {
-    console.log(data);
-
-    const productoInfo = mostrarProducto(producto.idProducto, producto.nombreProducto, producto.descripcionProducto, producto.precioProducto);
-    table.appendChild(productoInfo);
-
+    productInfoDiv.appendChild(productInfo(data));
+    productImageDiv.appendChild(productImage(data));
+    stock = data.stockProducto;
 }).catch((error) => alert("error!!!!!!!!!!!!"));
+
+
+//                                                         //
