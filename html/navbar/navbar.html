@@ -53,13 +53,14 @@
                         <span class="white">Productos</span></a>
                     </a>
                     <ul class="dropdown-menu submenu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="../products/Productos2.html"><span
-                            class="white">Todos los productos</span></a></li>
-                            <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="../products/Productos2.html"><span class="white">Todos los
+                                    productos</span></a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
                         <li><a class="dropdown-item" href="../products/Productos2.html"><span
                                     class="white">Decoupage</span></a></li>
-                        <li><a class="dropdown-item" href="../products/Productos2.html"><span
-                            class="white">Fibro
+                        <li><a class="dropdown-item" href="../products/Productos2.html"><span class="white">Fibro
                                     Fácil</span></a></li>
                         <li><a class="dropdown-item" href="../products/Productos2.html"><span
                                     class="white">Pinturas</span></a></li>
@@ -149,11 +150,10 @@
             </div>
 
         </div>
-    </div>
 </nav>
 
 <!-- carrito sidebar -->
-<div class=" sidebar p-4 mt-6" id="mySidepanel">
+<div class=" sidebar p-4 mt-6" id="mySidepanel" style="top: 85px; right: -600px; position: fixed; z-index: 1;">
     <!-- Contenedor principal -->
 
     <div>
@@ -164,15 +164,15 @@
             <span class="badge badge-secondary badge-pill">2</span>
         </h4>
 
+        <div class="list-group" id="product-list">
 
 
-        <div class="list-group">
 
-            <div class="list-group-item p-3">
+            <div class="list-group-item p-3" style = "max-width:100px;">
+<!-- 
                 <div class="row d-flex justify-content-center align-items-center">
-                    <!-- imagen -->
-                    <div class="col-auto h-100" style="max-width:100px;">
-                        <div class="d-flex justify-content-center align-items-center">
+                    <div class="col-auto h-100" style="max-width:100px;" id="itemImage">
+                        <div class="d-flex justify-content-center align-items-center" >
                             <img class="img-fluid h-100 rounded "
                                 src="file://C:\Users\amine\Desktop\web\aurora\images\image_1.jpg"
                                 alt="Acrílico Decorativo">
@@ -181,14 +181,13 @@
 
                     <div class="col row">
 
-                        <div class="col-auto d-flex">
-                            <!-- descripcion -->
+                        <div class="col-auto d-flex" id="itemDesc">
                             <div class="d-flex flex-column" style="max-width:100px;">
                                 <h6 class="">Acrílico Decorativo </h6>
                                 <small class="text-muted">Verde Cromo</small>
                                 <small class="text-muted">$100</small>
                             </div>
-
+                            
                         </div>
 
 
@@ -197,7 +196,6 @@
 
                             <div class="d-flex align-items-center justify-content-center w-100">
 
-                                <!-- cantidad -->
                                 <div class="input-group row d-flex align-items-center" style="width: 100px;">
 
                                     <span class="input-group-btn h-100 square-button">
@@ -232,7 +230,6 @@
                             </div>
 
                             <div class="mt-1">
-                                <!-- precio total -->
                                 <span>$100,00 </span>
                             </div>
 
@@ -242,7 +239,6 @@
                     </div>
 
                     <div class="col-auto d-flex justify-content-center align-items-center">
-                        <!-- boton eliminar -->
                         <div class="shrink-to-fit">
                             <button type="button"
                                 class="icon-button btn d-flex justify-content-center align-items-center"
@@ -257,9 +253,9 @@
                     </div>
 
                 </div>
-
+                 -->
             </div>
-
+<!-- 
             <div class="list-group-item p-3">
                 <div class="row d-flex justify-content-center align-items-center">
 
@@ -273,7 +269,6 @@
                     <div class="col row">
 
                         <div class="col-auto d-flex">
-                            <!-- descripcion -->
 
                             <div class="d-flex flex-column" style="max-width:100px;">
                                 <h6 class="">Acrílico Decorativo </h6>
@@ -288,7 +283,6 @@
                             style="min-width:110px;">
 
                             <div class="d-flex align-items-center justify-content-center w-100">
-                                <!-- cantidad -->
                                 <div class="input-group row d-flex align-items-center" style="width: 100px;">
 
                                     <span class="input-group-btn h-100 square-button">
@@ -322,7 +316,6 @@
                             </div>
 
                             <div class="mt-1">
-                                <!-- precio total -->
                                 <span>$100,00 </span>
                             </div>
 
@@ -332,7 +325,6 @@
                     </div>
 
                     <div class="col-auto d-flex justify-content-center align-items-center">
-                        <!-- boton eliminar -->
                         <div class="shrink-to-fit">
                             <button type="button"
                                 class="icon-button btn d-flex justify-content-center align-items-center"
@@ -349,7 +341,7 @@
                 </div>
 
             </div>
-
+ -->
 
             <h4 class="mb-3"></h4>
 

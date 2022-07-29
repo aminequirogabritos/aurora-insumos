@@ -34,7 +34,7 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
-
+    <script defer src="../../js/products/filterProducts.js"></script>
 </head>
 
 <body>
@@ -52,15 +52,21 @@
                         <div class="titulo ">
                             <h3 class="page-title">Categorías</h3>
                         </div>
-                        <div class="menu d-flex d-sm-block justify-content-center flex-wrap">
-                            <a href="#" class="link link-secondary" id="decoupage" value="decoupage">Decoupage</a> 
-                            <a href="#" class="link link-secondary" id="fibroFacil" value="fibroFacil">Fibro Facil</a>
-                            <a href="#" class="link link-secondary" id="pinturas" value="pinturas">Pinturas</a>
-                            <a href="#" class="link link-secondary" id="stencyl" value="stencyl">Stencyl</a>
+                        <div class="menu d-flex d-sm-block justify-content-center flex-wrap categoryList">
+                            <a href="#" class="categoryItem link link-secondary" category="all"
+                                value="decoupage">Todo</a>
+                            <a href="#" class="categoryItem link link-secondary" category="decoupage"
+                                value="decoupage">Decoupage</a>
+                            <a href="#" class="categoryItem link link-secondary" category="fibrofacil"
+                                value="fibroFacil">Fibro Facil</a>
+                            <a href="#" class="categoryItem link link-secondary" category="pinturas"
+                                value="pinturas">Pinturas</a>
+                            <a href="#" class="categoryItem link link-secondary" category="stencyl"
+                                value="stencyl">Stencyl</a>
                         </div>
                     </div>
                     <div class="col-12 col-md-10">
-                        <div class="row" id="products-container">
+                        <div class="row productList" id="products-container">
 
                             <!--                             
                             <div class="mi_padding col-6 col-md-4 col-lg-3">
@@ -221,22 +227,20 @@
 
 
 
+    <script id="trayendoNavbar">
+        $(document).ready(function () {
+            $('.navbar').load("../../html/navbar/navbar.html");
+        });
+    </script>
+    <script id="trayendoFooter">
+        $(document).ready(function () {
+            $('.footer').load("../../html/footer/footer.html");
+        });
+    </script>
 
     <script src="../../js/products/scriptProductos.js"></script>
-    
 
 </body>
-
-<script id="trayendoNavbar">
-    $(document).ready(function () {
-        $('.navbar').load("../../html/navbar/navbar.html");
-    });
-</script>
-<script id="trayendoFooter">
-    $(document).ready(function () {
-        $('.footer').load("../../html/footer/footer.html");
-    });
-</script>
 
 
 </html>

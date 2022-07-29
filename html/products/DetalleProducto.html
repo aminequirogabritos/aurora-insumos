@@ -15,8 +15,8 @@
     <title>Detalle Producto</title>
 
     <!-- stylesheets -->
-    <link rel="stylesheet" href="/css/generalStyle.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="../../css/generalStyle.css">
+    <link rel="stylesheet" href="../../css/style.css">
 
     <!-- scripts -->
 
@@ -45,16 +45,21 @@
                         <div class="row">
 
                             <!-- imagen -->
-                            <div class="col-12 col-md-7 w-100 my-3">
-                                <img class="img-fluid rounded justify-content-center w-100"
-                                    src="/imagenes/productosImg/img1.jpg" alt="">
-
+                            <div id="product-image" class="col-12 col-md-7 w-100 my-3">
+                                <!-- aqui hay que insertar la imagen -->
+                                <!-- 
+                                <div class="col-12 col-md-7 w-100 my-3">
+                                    <img class="img-fluid rounded justify-content-center w-100"
+                                        src="/imagenes/productosImg/img1.jpg" alt="">
+                                </div>
+                                 -->
                             </div>
 
-                            <!-- producto -->
-                            <div id="product-container" class="col-12 col-md-5 my-3 px-3">
 
-                                <!-- <div class="h-100 ">
+                            <!-- producto -->
+                            <div class="col-12 col-md-5 my-3 px-3">
+
+                                <div class="h-100 ">
 
                                     <div class="menu d-flex justify-content-start flex-wrap mb-3">
                                         <a href="#" class="link link-secondary">Productos</a>
@@ -64,20 +69,25 @@
                                         <a href="#" class="link link-secondary">Caja</a>
                                     </div>
 
+                                    <div class="d-flex flex-column w-100 mb-3">
+                                        <!-- descripcion -->
+                                        <div id="product-info">
+                                            <!-- 
+                                            <h4 class="">Cofre grande 18x14x15cm, acrilicos, servilleta de decoupage
+                                            </h4>
+                                            <h5 class="text-muted"></h5>
+                                            <h5 class="text-muted mb'3">$100</h5>
 
+                                            <small class="text-muted">6 disponibles</small>
+                                             -->
+                                        </div>
 
-                                    <div class="d-flex flex-column w-100 mb-3"> -->
-                                        <!-- descripcion --><!-- 
-                                        <h4 class="">Cofre grande 18x14x15cm, acrilicos, servilleta de decoupage
-                                        </h4>
-                                        <h5 class="text-muted"></h5>
-                                        <h5 class="text-muted mb'3">$100</h5>
-
-                                        <small class="text-muted">6 disponibles</small>
                                     </div>
 
-                                    <div class=" justify-content-center align-self-end w-100"> -->
-                                        <!-- cantidad --><!-- 
+                                    <div class=" justify-content-center align-self-end w-100">
+
+                                        <!-- cantidad -->
+
                                         <div class="input-group  align-items-center" style="min-width:110px;">
 
                                             <span class="input-group-btn h-100">
@@ -111,20 +121,19 @@
                                         </div>
 
                                         <div class="botonComprar d-flex gap-2 justify-content-evenly">
-                                            <button class="btn btn-block form-button" type="submit">Agregar al
+                                            <button class="btn btn-block form-button" id="addToCartButton" type="submit">Agregar al
                                                 carrito</button>
                                         </div>
 
                                     </div>
 
-                                </div> -->
+
+
+                                </div>
                             </div>
 
                         </div>
                     </div>
-
-                    <!-- script -->
-                    <script src="../../js/products/scriptDetalleProducto.js"></script>
 
                 </div>
 
@@ -135,6 +144,9 @@
     <div class="footer" style="margin-top: 3rem; opacity:0.9;">
         <!-- aca va el footer, abajo esta el script -->
     </div>
+
+    <!-- script -->
+    <script src="../../js/products/scriptDetalleProducto.js"></script>
 
 </body>
 <script id="trayendoNavbar">
