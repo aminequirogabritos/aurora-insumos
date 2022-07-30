@@ -4,6 +4,8 @@
 
 <!-- script -->
 <script src="../../js/navbar/script.js"></script>
+<script defer src="../../js/navbar/scriptCartProducts.js"></script>
+<script defer src="../../js/scriptItemQuantity.js"></script>
 
 <!-- estilo css -->
 <link rel="stylesheet" href="../../css/navBar/navbarStyle.css">
@@ -23,6 +25,9 @@
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+
+
 
 <!-- navbar -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
@@ -164,12 +169,15 @@
             <span class="badge badge-secondary badge-pill">2</span>
         </h4>
 
-        <div class="list-group" id="product-list">
+        <div class="list-group">
 
+            <div id="product-list">
 
+            </div>
 
-            <div class="list-group-item p-3" style = "max-width:100px;">
-<!-- 
+    <!-- 
+            <div class="list-group-item p-3" >
+
                 <div class="row d-flex justify-content-center align-items-center">
                     <div class="col-auto h-100" style="max-width:100px;" id="itemImage">
                         <div class="d-flex justify-content-center align-items-center" >
@@ -181,7 +189,7 @@
 
                     <div class="col row">
 
-                        <div class="col-auto d-flex" id="itemDesc">
+                        <div class="col d-flex" id="itemDesc">
                             <div class="d-flex flex-column" style="max-width:100px;">
                                 <h6 class="">Acrílico Decorativo </h6>
                                 <small class="text-muted">Verde Cromo</small>
@@ -191,14 +199,14 @@
                         </div>
 
 
-                        <div class="col mt-3 d-flex flex-column justify-content-center align-items-center"
-                            style="min-width:110px;">
+                        <div class="col-6 mt-3 d-flex flex-column justify-content-center align-items-center"
+                            style="max-width:150px;">
 
-                            <div class="d-flex align-items-center justify-content-center w-100">
+                            <div class="d-flex align-items-center justify-content-center w-100" >
 
-                                <div class="input-group row d-flex align-items-center" style="width: 100px;">
+                                <div class="input-group row d-flex align-items-center justify-content-center">
 
-                                    <span class="input-group-btn h-100 square-button">
+                                    <span class="input-group-btn h-100 square-button" style="margin: 1; padding: 0;">
                                         <button type="button"
                                             class="form-button btn minus d-flex justify-content-center align-items-center"
                                             disabled="disabled">
@@ -210,12 +218,12 @@
                                         </button>
                                     </span>
 
-                                    <div class="col" style="min-width:40px;">
+                                    <div class="col" style="max-width:60px; margin: 1; padding: 0;">
                                         <input type="number" class="form-control input-number text-center" value="1"
                                             min="1">
                                     </div>
 
-                                    <span class="input-group-btn h-100 square-button">
+                                    <span class="input-group-btn h-100 square-button" style="margin: 1; padding: 0;">
                                         <button type="button"
                                             class="form-button btn plus d-flex justify-content-center align-items-center">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -232,6 +240,10 @@
                             <div class="mt-1">
                                 <span>$100,00 </span>
                             </div>
+
+                        </div>
+
+                        <div class="col-2">
 
                         </div>
 
@@ -253,9 +265,10 @@
                     </div>
 
                 </div>
-                 -->
-            </div>
-<!-- 
+
+            </div> -->
+                            <!--            
+
             <div class="list-group-item p-3">
                 <div class="row d-flex justify-content-center align-items-center">
 
@@ -341,7 +354,7 @@
                 </div>
 
             </div>
- -->
+                -->
 
             <h4 class="mb-3"></h4>
 

@@ -1,6 +1,4 @@
-var minusButton = document.getElementById("minusButton");
-var plusButton = document.getElementById("plusButton");
-var productQuantity = document.getElementById("productQuantity");
+
 var addToCartButton = document.getElementById("addToCartButton");
 var productListDiv = document.getElementById("product-list");
 var itemImageDiv = document.getElementById("itemImage");
@@ -26,74 +24,13 @@ console.log(productId);
 
 //}
 
-
+// no se por que hice esto, pero creo que no sirve xd
 window.onbeforeunload = function () {
     //guardar id de producto antes de recargar
     localStorage.setItem('productId', productId);
 }
 
 //
-
-minusButton.addEventListener('click', (
-    function (e) {
-        // si el numero de productQuantity es mayor o igual a 1, decremento
-
-        if (productQuantity.value > 1) {
-            productQuantity.value = parseInt(productQuantity.value) - 1;
-
-            if (productQuantity.value <= 1)
-                minusButton.setAttribute('disabled', 'disabled');
-
-            if (productQuantity.value < stock && plusButton.getAttribute('disabled'))
-                plusButton.removeAttribute('disabled');
-        }
-    }
-)
-)
-
-plusButton.addEventListener('click', (
-    function (e) {
-        // si hay stock, incremento
-
-        if (parseInt(productQuantity.value) < stock) {
-            productQuantity.value = parseInt(productQuantity.value) + 1;
-
-            if (productQuantity.value > 1) {
-                minusButton.removeAttribute('disabled');
-            }
-
-            if (productQuantity.value == stock)
-                plusButton.setAttribute('disabled', 'disabled');
-        }
-        quantity = parseInt(productQuantity.value);
-    }
-)
-)
-
-
-productQuantity.addEventListener('input', function (e) {
-
-    // obtener stock de la DB
-
-    var value = parseInt(productQuantity.value);
-
-    if (productQuantity.value > stock)
-        productQuantity.value = 1;
-
-    if (productQuantity.value == stock) {
-        plusButton.setAttribute('disabled', 'disabled');
-        minusButton.removeAttribute('disabled');
-    }
-    else if (productQuantity.value == 1) {
-        minusButton.setAttribute('disabled', 'disabled');
-        plusButton.removeAttribute('disabled');
-    }
-
-    quantity = parseInt(productQuantity.value);
-
-}
-)
-
 
 
 const cartItem = (producto) => {
