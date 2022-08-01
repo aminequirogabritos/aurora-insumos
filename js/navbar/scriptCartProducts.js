@@ -1,5 +1,7 @@
 //import * as scriptProductos from "../products/scriptProductos.js";
 
+//
+
 /* nota: habria que poner un product objeto, en vez de pasar tantos parametros */
 const itemCarrito = (productImg, productName, productDesc, productPrice) => {
     const card = document.createElement("div");
