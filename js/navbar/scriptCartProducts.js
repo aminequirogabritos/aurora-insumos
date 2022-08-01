@@ -1,42 +1,32 @@
-
 //import * as scriptProductos from "../products/scriptProductos.js";
 
-
+/* nota: habria que poner un product objeto, en vez de pasar tantos parametros */
 const itemCarrito = (productImg, productName, productDesc, productPrice) => {
-
     const card = document.createElement("div");
     card.className = "list-group-item p-3";
     card.setAttribute('style', "max-width:100px;");
 
-
     const contenido = `
-
-    <div class="row d-flex justify-content-center align-items-center">
+    <div class="row d-flex justify-content-center align-items-center carritoItem">
         <div class="col-auto h-100" style="max-width:100px;" id="itemImage">
             <div class="d-flex justify-content-center align-items-center" >
-                <img class="img-fluid h-100 rounded "
+                <img class="itemImg img-fluid h-100 rounded"
                     src="${productImg}"
                     alt="Acrílico Decorativo">
             </div>
         </div>
-
         <div class="col row">
-
             <div class="col-auto d-flex" id="itemDesc">
                 <div class="d-flex flex-column" style="max-width:100px;">
-                    <h6 class="">${productName}</h6>
-                    <small class="text-muted">${productDesc}</small>
-                    <small class="text-muted">$${productPrice}</small>
+                    <h6 class="itemName">${productName}</h6>
+                    <small class="itemDescription text-muted">${productDesc}</small>
+                    <small class="itemPrice text-muted">$${productPrice}</small>
                 </div>
             </div>
-
             <div class="col mt-3 d-flex flex-column justify-content-center align-items-center"
                 style="min-width:110px;">
-
                 <div class="d-flex align-items-center justify-content-center w-100">
-
                     <div class="input-group row d-flex align-items-center" style="width: 100px;">
-
                         <span class="input-group-btn h-100 square-button">
                             <button type="button"
                                 class="form-button btn minus d-flex justify-content-center align-items-center"
@@ -48,12 +38,10 @@ const itemCarrito = (productImg, productName, productDesc, productPrice) => {
                                 </svg>
                             </button>
                         </span>
-
                         <div class="col" style="min-width:40px;">
                             <input type="number" class="form-control input-number text-center" value="1"
                                 min="1">
                         </div>
-
                         <span class="input-group-btn h-100 square-button">
                             <button type="button"
                                 class="form-button btn plus d-flex justify-content-center align-items-center">
@@ -67,16 +55,11 @@ const itemCarrito = (productImg, productName, productDesc, productPrice) => {
                     </div>
 
                 </div>
-
                 <div class="mt-1">
                     <span>$100,00 </span>
                 </div>
-
             </div>
-
-
         </div>
-
         <div class="col-auto d-flex justify-content-center align-items-center">
             <div class="shrink-to-fit">
                 <button type="button"
@@ -90,29 +73,59 @@ const itemCarrito = (productImg, productName, productDesc, productPrice) => {
                 </button>
             </div>
         </div>
-
     </div>
-
     `;
-
 
     card.innerHTML = contenido;
     return card;
-
-
-
-}
+};
 
 const item = localStorage.getItem('addItemToCart');
 console.log("🌸 ~ file: scriptCartProducts.js ~ line 110 ~ addItemToCart ~ item", item);
 
-
-function addItemToCart() {
-
+/* funcion para agregar item al carrito */
+function addItemToCart () {
     const item = localStorage.getItem('addItemToCart');
     console.log("🌸 ~ file: scriptCartProducts.js ~ line 110 ~ addItemToCart ~ item", item);
-    
-
-
 }
 
+/* funcion que actualizara el total del carrito sideBar cada vez que se agregue o quite un producto */
+function updateTotalPrizeCart () {
+    let total = 0;
+    const totalCarritoSideBar = document.querySelector("#totalCarritoSideBar");
+
+    const carritoSideBarItems = document.querySelectorAll(".carritoItem");
+
+    carritoSideBarItems.forEach(item => {
+        const itemPriceElement = item.querySelector(".itemPrice");
+
+        const itemPrice = Number(itemPriceElement.textContent.replace('$', ''));
+
+        /* la siguiente variable obtiene la  cantidad del producto en el carrito,
+        no la encontre en el codigo, como tampoco puedo ejecutarlo es algo que hay que modificar desp */
+        const itemQuantityElement = item.querySelector(".itemQuantity");
+        const itemQuantity = Number(itemQuantityElement.value);
+        total = total + (itemPrice * itemQuantity);
+    });
+
+    totalCarritoSideBar.innerHTML = `$${total.toFixed(2)}`;
+}
+
+/* funcion que sirve para eliminar un item del carrito sidebar
+nota: estas funciones creadas nuevas hay que agregarlas en otro lado haciendo
+uso del addEventListener */
+function removeItemCarrito (event) {
+    const buttonClicked = event.target;
+    buttonClicked.closest(".carritoItem").remove();
+    updateTotalPrizeCart();
+}
+
+/* funcion para cambiar la cantidad de elementos de carrito */
+function cantidadCambiar (event) {
+    const cambio = event.target;
+    const cambioValue = cambio.value; /* obtengo el valor */
+    if (cambioValue <= 0) {
+        cambioValue = 1;
+    }
+    updateTotalPrizeCart();
+}
