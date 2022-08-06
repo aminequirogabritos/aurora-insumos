@@ -64,13 +64,9 @@ receiptInfoForm.addEventListener('submit',
     }, false)
 
     receiptInfoForm.classList.add('was-validated');
-
     receiptInfoForm.classList.remove('active-form');
-
     receiptInfoDiv.style.display = 'none';
-
     deliveryInfoDiv.style.display = 'inline';
-
     deliveryInfoForm.classList.add('active-form');
 
 
@@ -236,6 +232,8 @@ submitInfoButton.addEventListener('click',
 
 )
 
+
+// i am testing git branch
 
 
 
