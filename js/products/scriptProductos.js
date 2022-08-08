@@ -1,9 +1,18 @@
 
 /////////////////////// PRODUCTOS ///////////////////////////////
 
-import addEventToItemQuantityButtons from '../scriptItemQuantity.js';
+import * as import1 from '../scriptItemQuantity.js';
+import * as import2 from '../navbar/scriptCartProducts.js';
 
-var imageSource = '../../imagenes/productosImg/';
+
+
+/* const updateTotalPrizeCart = require('updateTotalPrizeCart');
+const addEventToRemoveItemCarrito = require('addEventToRemoveItemCarrito'); */
+
+
+var productItemsList = document.getElementById('product-list');
+
+
 
 var todasLasCategorias;
 
@@ -81,7 +90,6 @@ const crearNuevaLinea = (idProducto, nombreProducto, descripcionProducto, precio
         </div>
     `;
 
-    //C:\\Users\\amine\\Desktop\\web\\aurora-insumos\\imagenes\\productosImg\\
     card.innerHTML = contenido;
     return card;
 
@@ -142,8 +150,8 @@ listaProductos().then((data) => {
 
 
 // agregar evento a todos los botones "Ver". estos botones llevan a vista individual producto
-            //update price
-            totalPriceSpan.innerHTML = "$" + (input.value * price);
+//update price
+//totalPriceSpan.innerHTML = "$" + (input.value * price);
 function addEventToViewButtons() {
 
     // this function takes all the "Ver" buttons
@@ -213,8 +221,25 @@ function addEventToViewButtons() {
 // crear un item de la lista de productos del carrito
 function itemCarrito(productId, productImg, productName, productDesc, productPrice, productStock) {
 
+    const elementsTitle = productItemsList.getElementsByClassName('itemTitle');
+
+    for (let i = 0; i < elementsTitle.length; i++) {
+        if (elementsTitle[i].innerText === productName) {
+            var minusButton = document.getElementById(`minusButton${productId}`);
+            var plusButton = document.getElementById(`plusButton${productId}`);
+            var productQuantity = document.getElementById(`productQuantity${productId}`);
+
+            controlQuantity(plusButton, minusButton, plusButton, productQuantity.value);
+            /* 
+            let elementQuantity = elementsTitle[i].parentElement.parentElement.parentElement.querySelector('.inputNumber');
+            controlQuantity(input, plusButton, minusButton, plusButton, price, totalPriceSpan, stock, productQuantity.value);
+            elementQuantity.value++; */
+            return 0;
+        }
+    }
+
     const card = document.createElement("div");
-    card.className = "list-group-item p-3";
+    card.className = "list-group-item p-3 carritoItem";
 
     //stock = obtenerStockProducto(productId);
 
@@ -223,9 +248,9 @@ function itemCarrito(productId, productImg, productName, productDesc, productPri
     <div class="row d-flex justify-content-center align-items-center">
         <div class="col-auto h-100" style="max-width:100px;" id="itemImage">
             <div class="d-flex justify-content-center align-items-center" >
-                <img class="img-fluid h-100 rounded "
+                <img class="itemImg img-fluid h-100 rounded "
                     src="${productImg}"
-                    alt="Acrílico Decorativo">
+                    alt="">
             </div>
         </div>
 
@@ -233,7 +258,7 @@ function itemCarrito(productId, productImg, productName, productDesc, productPri
 
         <div class="col d-flex" id="itemDesc">
         <div class="d-flex flex-column" style="max-width:100px;">
-            <h6 class="">${productName}</h6>
+            <h6 class="itemTitle">${productName}</h6>
             <small class="text-muted">${productDesc}</small>
             <small id="productPrice" class="text-muted">${productPrice}</small>
         </div>
@@ -261,7 +286,7 @@ function itemCarrito(productId, productImg, productName, productDesc, productPri
                         </span>
 
                         <div class="col " style="max-width:60px; margin: 1; padding: 0;">
-                            <input type="number" name="productQuantity" id="productQuantity${productId}" class="form-control input-number text-center" value="1"
+                            <input type="number" name="productQuantity" id="productQuantity${productId}" class="inputNumber form-control input-number text-center itemQuantity" value="1"
                                 min="1" max="${productStock}">
                         </div>
 
@@ -280,7 +305,7 @@ function itemCarrito(productId, productImg, productName, productDesc, productPri
                 </div>
 
                 <div class="mt-1">
-                    <span name="productTotalPrice" id="productTotalPrice${productId}">${productPrice}</span>
+                    <span name="productTotalPrice" class="itemPrice" id="productTotalPrice${productId}">${productPrice}</span>
                 </div>
 
             </div>
@@ -294,7 +319,7 @@ function itemCarrito(productId, productImg, productName, productDesc, productPri
 
         <div class="col-auto d-flex justify-content-center align-items-center">
             <div class="shrink-to-fit">
-                <button type="button"
+                <button type="button" id="removeButton${productId}"
                     class="icon-button btn d-flex justify-content-center align-items-center"
                     style="width:20; height:20;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -372,10 +397,8 @@ function addEventToBuyButtons() {
             const productImg = productCard.querySelector('.card-img-top').getAttribute('src');
 
             //obtener el id del producto
-            productImg.replace(imageSource, '');
-            let arraySplitted = productImg.split("/")
-            let array2 = arraySplitted[4].split(".")
-            let productId = array2[0];
+
+            const productId = getProductId(productImg);
 
             //obtener el nombre del producto
             const productName = productCard.querySelector('.productName').innerHTML;
@@ -426,16 +449,22 @@ function addEventToBuyButtons() {
 
                 // si la consulta a BD fue exitosa, crear elemento 
 
-                const productItemList = document.getElementById('product-list');
+                productItemsList = document.getElementById('product-list');
 
                 const productStock = parseInt(data.stockProducto);
 
-                productItemList.appendChild(itemCarrito(productId, productImg, productName, productDesc, productPrice, productStock));
+                const newItemCarrito = itemCarrito(productId, productImg, productName, productDesc, productPrice, productStock);
 
-                // esta funcion es importada del documento scriptItemQuantity.js
-                // agrega event listeners a los botones + y - del item de la
-                // lista de productos que acabamos de crear
-                addEventToItemQuantityButtons(document,productId);
+                if (newItemCarrito !== 0) {
+                    productItemsList.appendChild(newItemCarrito);
+                    // esta funcion es importada del documento scriptItemQuantity.js
+                    // agrega event listeners a los botones + y - del item de la
+                    // lista de productos que acabamos de crear
+                    addEventToItemQuantityButtons(document, productId);
+                    addEventToRemoveItemCarrito(document, productId);
+                }
+
+                updateTotalPrizeCart();
 
             }).catch((error) => alert("error!!!! no se pudo obtener el producto con el id esepcificado"));
 
@@ -444,10 +473,11 @@ function addEventToBuyButtons() {
 }
 
 
-// add to cart
+function getProductId(productImg) {
+    //obtener el id del producto
+    productImg.replace(imageSource, '');
+    let arraySplitted = productImg.split("/")
+    let array2 = arraySplitted[4].split(".")
+    return array2[0];
 
-
-
-
-
-
+}

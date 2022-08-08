@@ -1,8 +1,6 @@
 module.exports = {
-    HOST: "127.0.0.1",
-    USER: "root",
-    PASSWORD: "password",
-    DB: "aurorainsumosDB"
+    HOST: process.env.HOST_DB,
+    USER: process.env.USER_DB,
+    PASSWORD: process.env.PASSWORD_DB,
+    DB: process.env.NAME_DB
   };
-
-
