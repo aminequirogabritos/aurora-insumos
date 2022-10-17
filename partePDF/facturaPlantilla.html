@@ -13,88 +13,13 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-10 ">
-                <h1>Factura</h1>
-            </div>
-            <div class="col-xs-2">
-                <img class="img img-responsive" src="../imagenes/logoaurora.jpeg" alt="Logotipo">
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col-xs-10">
-                <h1 class="h6">Aurora Insumos</h1>
-            </div>
-            <div class="col-xs-2 text-center">
-                <strong>Fecha</strong>
-                <br>La fecha de hoy qsyo<br>
-                <strong>Factura No.</strong>
-                <br>
-                1
-            </div>
-        </div>
-        <hr>
-        <div class="row text-center" style="margin-bottom: 2rem;">
-            <div class="col-xs-6">
-                <h1 class="h2">Cliente</h1>
-                <span id="clienteFactura"><strong>Amine Quiroga</strong></span>
-            </div>
-            <div class="col-xs-6">
-                <h1 class="h2">Remitente</h1>
-                <strong>Aurora Insumos</strong>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-                <table class="table table-condensed table-bordered table-striped">
-                    <thead>
-                        <tr>
-                            <th>Descripción</th>
-                            <th>Cantidad</th>
-                            <th>Precio unitario</th>
-                            <th>Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{tablaProductos}}
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="3" class="text-right">Subtotal</td>
-                            <td>{{subtotal}}</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3" class="text-right">Descuento</td>
-                            <td>{{descuento}}</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3" class="text-right">Subtotal con descuento</td>
-                            <td>{{subtotalConDescuento}}</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3" class="text-right">Impuestos</td>
-                            <td>{{impuestos}}</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3" class="text-right">
-                                <h4>Total</h4>
-                            </td>
-                            <td>
-                                <h4>{{total}}</h4>
-                            </td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 text-center">
-                <p class="h5">Gracias por su compra!</p>
-            </div>
-        </div>
+    <div class="container-fluid traerFactura">
     </div>
 </body>
+<script id="traerFactura">
+    $(document).ready(function () {
+        $('.traerFactura').load("./facturaPelada.html");
+    });
+</script>
 
 </html>

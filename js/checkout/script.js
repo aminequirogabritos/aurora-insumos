@@ -1,6 +1,6 @@
 
 
-
+import {crearFactura} from '../graciasPorSuCompra/script.js';
 
 const anotherPersonDiv = document.getElementById("anotherPersonDiv");
 const continueToPaymentButton = document.getElementById("continueToPaymentButton");
@@ -35,7 +35,7 @@ var cartString, cart, total;
 window.onload = function () {
 
   cartString = localStorage.getItem('cartItems'); // funciona
-  localStorage.removeItem('cartItems');
+  //localStorage.removeItem('cartItems');
   cart = JSON.parse(cartString);
   console.log("🌸 ~ file: script.js ~ line 37 ~ cart", cart);
 
@@ -60,7 +60,6 @@ window.onload = function () {
           }
         }
       });
-      console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
       return promise;
 
     };
@@ -77,8 +76,8 @@ window.onload = function () {
     }).catch((error) => alert("error!!!! no se pudo "));
   }
   )
-  
-  let juntar = "$"+total;
+
+  let juntar = "$" + total;
   let precioTotal = document.getElementById("totalCarritoSidebar");
   precioTotal.textContent = juntar;
 
@@ -101,15 +100,15 @@ function itemCarrito(producto, cantidad) {
               <div class="col-auto d-md-none d-lg-block product-col d-flex align-items-center">
                   <div style="max-width:50px;">
                       <img class="img-fluid rounded"
-                          src="file://C:\Users\amine\Desktop\web\aurora\images\image_1.jpg"
+                          src="file://C:\\Users\amine\\Desktop\\web\\aurora\\images\\image_1.jpg"
                           alt="${producto.nombreProducto}" style="max-height: 100%; max-width: 100%;">
                   </div>
               </div>
 
               <div class="col mr-3">
-                  <h6 class="my-0">${producto.nombreProducto}</h6>
-                  <small class="text-muted">${producto.descripcionProducto} x${cantidad}</small><br>
-                  <small id="productPrice" class="text-muted ">$${producto.precioProducto}</small>
+                  <h6 class="my-0 itemName">${producto.nombreProducto}</h6>
+                  <small class="text-muted itemDesc">${producto.descripcionProducto}</small><small class="itemQuantity"> x${cantidad}</small><br>
+                  <small id="productPrice" class="text-muted itemPrice2 ">$${producto.precioProducto}</small>
               </div>
           </div>
           <span class="text-muted itemPrice">$${producto.precioProducto * cantidad}</span>
@@ -245,6 +244,104 @@ deliveryInfoForm.addEventListener('submit',
       checkoutDiv.classList.add('active-form');
     }
 
+    //contenido del correo
+
+    /*     let mailContent = `
+              <p> Estiamdo/a ${firstName.value}:</p><br>
+              <p>Se ha recibido su pedido</p>
+              <p>Tengo sueño</p>
+          `; */
+
+
+    // decrementar stock productos
+    /* 
+        var cartString = localStorage.getItem('cartItems'); // funciona
+        //localStorage.removeItem('cartItems');
+        var cart = JSON.parse(cartString);
+    
+    
+        cart.forEach(item => {
+          //traer un item 
+    
+          let productInfo = {
+            id: item.itemId,
+            stock: item.itemQuantity
+          }
+    
+          const http = new XMLHttpRequest();
+          http.open("UPDATE", "http://localhost:8080/api/producto/" + item.itemId);
+    
+          http.setRequestHeader('content-type', 'application/json');
+    
+          http.send();
+          http.onload = function () {
+            const response = JSON.parse(http.response);
+            if (http.status >= 400) {
+              reject(response);
+            } else {
+              resolve(response);
+            }
+          }
+    
+          http.send(JSON.stringify(productInfo));
+     */
+    /*       const consultaBD = () => {
+            const promise = new Promise((resolve, reject) => {
+    
+    
+    
+            });
+            return promise;
+    
+          };
+          consultaBD().then((data) => {
+    
+            // si la consulta a BD fue exitosa, crear elemento 
+    
+            var product = data;
+    
+            var itemListUl = document.querySelector('.itemList');
+    
+            itemListUl.appendChild(itemCarrito(product, item.itemQuantity));
+    
+          }).catch((error) => alert("error!!!! no se pudo ")); */
+    /*     }
+        )
+     */
+    /////////////
+
+
+    const carritoSideBarItems = document.querySelectorAll(".carritoItem");
+
+    var array = [];
+
+    carritoSideBarItems.forEach(item => {
+      const itemPriceElement = item.querySelector(".itemPrice2");
+      const itemPrice = Number(itemPriceElement.textContent.replace('$', ''));
+      const itemName = item.querySelector(".itemName").textContent;
+      const itemQuantity = item.querySelector(".itemQuantity").textContent.replace(' x', '');
+
+      var arrayItem = {
+        nombre: itemName,
+        cantidad: itemQuantity,
+        precio: itemPrice,
+      }
+
+      array.push(arrayItem);
+
+    });
+
+    console.log(array);
+
+    const stringJSON = JSON.stringify(array);
+    console.log("🌸 ~ file: graciasPorSuCompra.js ~ line 35 ~ submitInfoButton.addEventListener ~ stringJSON", stringJSON);
+
+    localStorage.setItem('cartItems', stringJSON);
+
+    // generar html para enviar al correo
+
+    let mailContent = crearFactura(null).outerHTML;
+
     let formData = {
       firstName: firstName.value,
       lastName: lastName.value,
@@ -254,7 +351,8 @@ deliveryInfoForm.addEventListener('submit',
       dni: dni.value,
       anotherPersonCheck: anotherPersonCheck.value,
       firstNameAnotherPerson: firstNameAnotherPerson.value,
-      lastNameAnotherPerson: lastNameAnotherPerson.value
+      lastNameAnotherPerson: lastNameAnotherPerson.value,
+      mailContent: mailContent
     }
 
     var http = new XMLHttpRequest();
@@ -274,11 +372,15 @@ deliveryInfoForm.addEventListener('submit',
         firstNameAnotherPerson.value = '';
         lastNameAnotherPerson.value = '';
       } else {
-        alert('Something went wrong❗❗❗❗❗❗❗')
+        alert('Something went wrong')
       }
     };
 
     http.send(JSON.stringify(formData));
+
+
+    location.href = "../../html/graciasPorSuCompra/graciasPorSuCompra.html";
+
 
   }
   )

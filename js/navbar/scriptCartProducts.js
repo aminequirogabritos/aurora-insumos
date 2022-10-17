@@ -16,26 +16,125 @@ function addItemToCart () {
 // boton iniciar compra
 
 
+/* window.addEventListener("beforeunload", function (event) {
+    // guardar contenido de product-list
+    let productList = document.querySelector('.product-list');
+    let cartItemsTemp = productList.innerHTML;
+    console.log("🌸 ~ file: scriptCartProducts.js ~ line 26 ~ addEventListener ~ cartItems", cartItems);
+    localStorage.setItem('cartItemsTemp', cartItemsTemp);
+    console.log("🌸 ~ file: scriptCartProducts.js ~ line 28 ~ addEventListener ~ localStorage", localStorage);
+    localStorage.removeItem('cartItemsTemp');
+    var e = e || window.event;
+    // For IE and Firefox
+    if (e) {
+        e.returnValue = 'Leaving the page';
+    }
+    // For Safari
+    return 'Leaving the page';
+}); */
+/* 
+window.onbeforeunload = function () {
+    // guardar contenido de product-list
+    let productList = document.querySelector('.product-list');
+    let cartItemsTemp = String(productList);
+    console.log("🌸 ~ file: scriptCartProducts.js ~ line 26 ~ addEventListener ~ cartItems", cartItems);
+    localStorage.setItem('cartItemsTemp', cartItemsTemp);
+    console.log("🌸 ~ file: scriptCartProducts.js ~ line 28 ~ addEventListener ~ localStorage", localStorage);
+    localStorage.removeItem('cartItemsTemp');
+}
+ */
+/* 
+$(window).bind('beforeunload', function(){
+    let productList = document.querySelector('.product-list');
+    let cartItemsTemp = productList.innerHTML;
+    console.log("🌸 ~ file: scriptCartProducts.js ~ line 26 ~ addEventListener ~ cartItems", cartItems);
+    localStorage.setItem('cartItemsTemp', cartItemsTemp);
+    console.log("🌸 ~ file: scriptCartProducts.js ~ line 28 ~ addEventListener ~ localStorage", localStorage);
+    localStorage.removeItem('cartItemsTemp');
+}); 
+ */
+/* 
+addEventListener('beforeunload', (event) => {
+    // guardar contenido de product-list
+    let productList = document.querySelector('.product-list');
+    console.log("🌸 ~ file: scriptCartProducts.js ~ line 63 ~ addEventListener ~ productList", productList);
+    //let cartItemsTemp = productList.innerHTML;
+    localStorage.setItem('cartItemsTemp', cartItemsTemp);
+    console.log("🌸 ~ file: scriptCartProducts.js ~ line 28 ~ addEventListener ~ localStorage", localStorage);
+    localStorage.removeItem('cartItemsTemp');
+    alert('piumba');
+});
+ */
+//localStorage.removeItem('cartItemsTemp');
 
 
+/* window.addEventListener('load',(e) => {
+    console.log(localStorage);
+    var cartItemsTemp = localStorage.getItem('cartItemsTemp');
+    let productList = document.querySelector('#product-list');
+}) */
+
+/* var cartItemsTemp = localStorage.getItem('cartItemsTemp');
+var productList = document.querySelector('#product-list');
+productList.outerHTML = cartItemsTemp; */
+
+
+/* if (document.readyState === 'complete') {
+    // if the document is already loaded, it will execute the code
+    var cartItemsTemp = localStorage.getItem('cartItemsTemp');
+    var productList = document.querySelector('#product-list');
+    productList.outerHTML = cartItemsTemp;
+} else {
+    // if the document is not loaded, this will add an event listener 
+    // to the document for when it's loaded
+    document.addEventListener('DOMContentLoaded', function () {
+
+    });
+} */
+
+/* document.onreadystatechange = function () {
+    if (document.readyState === 'complete') {
+        var cartItemsTemp = localStorage.getItem('cartItemsTemp');
+        var productList = document.querySelector('#product-list');
+        productList.outerHTML = cartItemsTemp;
+    }
+} */
+/* 
+window.onload = () => {
+    var cartItemsTemp = localStorage.getItem('cartItemsTemp');
+    var productList = document.querySelector('#product-list');
+    productList.outerHTML = cartItemsTemp;
+}
+ */
+
+window.addEventListener('beforeunload', (event) => {
+    // guardar contenido de product-list
+    let productList = document.querySelector('#product-list');
+    //let cartItemsTemp = String(productList);
+    //console.log("🌸 ~ file: scriptCartProducts.js ~ line 26 ~ addEventListener ~ cartItems", cartItems);
+    localStorage.setItem('cartItemsTemp', productList.outerHTML);
+    //localStorage.removeItem('cartItemsTemp');
+    //event.returnValue = "";
+});
+
+// event listener boton ir a compra
 document.body.addEventListener('click', function (event) {
     if (event.target.id == 'botonIniciarCompra') {
 
-            let array = guardarValoresEnArreglo();
+        let array = guardarValoresEnArreglo();
 
-            const stringJSON = JSON.stringify(array);
+        const stringJSON = JSON.stringify(array);
 
-            // cargar el string en localstorage
-            localStorage.setItem('cartItems', stringJSON);
+        // cargar el string en localstorage
+        localStorage.setItem('cartItems', stringJSON);
 
-            const total = Number(document.querySelector("#totalCarritoSideBar").textContent.replace('$', ''));
+        const total = Number(document.querySelector("#totalCarritoSideBar").textContent.replace('$', ''));
 
-            localStorage.setItem('total', total);
+        localStorage.setItem('total', total);
 
 
     };
 });
-
 
 function getProductId(productImg) {
     //obtener el id del producto
@@ -101,4 +200,3 @@ function addEventToRemoveItemCarrito(html, productId) {
         }
     ))
 }
-

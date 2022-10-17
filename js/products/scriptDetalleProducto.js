@@ -25,10 +25,15 @@ console.log(productId);
 //}
 
 // no se por que hice esto, pero creo que no sirve xd
-window.onbeforeunload = function () {
+/* window.onbeforeunload = function () {
     //guardar id de producto antes de recargar
     localStorage.setItem('productId', productId);
-}
+} */
+
+window.addEventListener('beforeunload', (event) => {
+    localStorage.setItem('productId', productId);
+    //event.returnValue = "";
+});
 
 //
 

@@ -4,15 +4,10 @@
 import * as import1 from '../scriptItemQuantity.js';
 import * as import2 from '../navbar/scriptCartProducts.js';
 
-
-
 /* const updateTotalPrizeCart = require('updateTotalPrizeCart');
 const addEventToRemoveItemCarrito = require('addEventToRemoveItemCarrito'); */
 
-
 var productItemsList = document.getElementById('product-list');
-
-
 
 var todasLasCategorias;
 
@@ -447,7 +442,7 @@ function addEventToBuyButtons() {
             };
             consultaBD().then((data) => {
 
-                // si la consulta a BD fue exitosa, crear elemento 
+                // si la consulta a BD fue exitosa, crear elemento y agregarlo al carrito
 
                 productItemsList = document.getElementById('product-list');
 
@@ -463,7 +458,7 @@ function addEventToBuyButtons() {
                     addEventToItemQuantityButtons(document, productId);
                     addEventToRemoveItemCarrito(document, productId);
                 }
-
+                //$('toast').toast('show')
                 updateTotalPrizeCart();
 
             }).catch((error) => alert("error!!!! no se pudo obtener el producto con el id esepcificado"));

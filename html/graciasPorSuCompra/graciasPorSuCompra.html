@@ -36,6 +36,15 @@
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
+    <!-- js -->
+    <!-- <script defer id="traerFactura">
+        $(document).ready(function () {
+            $('.traerFactura').load("../../partePDF/facturaPelada.html");
+        });
+    </script> -->
+    <!-- <script defer src="../../partePDF/crearFactura.js"></script> -->
+    <script defer type="module" src="../../js/graciasPorSuCompra/script.js"></script>
+
 
     <!-- Titulo de la pagina -->
     <title>Aurora Insumos</title>
@@ -60,88 +69,14 @@
 
                 <!-- comprobante -->
                 <h4>Su comprobante:</h4>
-                <div id="global" class="comprobante container-fluid shadow pt-2 pb-2 mb-3 mt-2"
+                <div id="global" class="traerFactura comprobante container-fluid shadow pt-2 pb-2 mb-3 mt-2"
                     style="border-color: #527b89; border-radius:15px">
-                    <div class="row">
-                        <div class="col-md-10">
-                            <h1>Comprobante</h1>
-                        </div>
-                        <div class="col-md-2">
-                            <img class="img img-responsive" src="../../imagenes/logoaurora.jpeg" alt="Logotipo">
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-md-10">
-                            <h1 class="h6">Aurora Insumos</h1>
-                        </div>
-                        <div class="col-md-2 text-center">
-                            <strong>Fecha</strong>
-                            <br>La fecha de hoy qsyo<br>
-                            <strong>Factura No.</strong>
-                            <br>
-                            1
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row text-center" style="margin-bottom: 2rem;">
-                        <div class="col-md-6">
-                            <h1 class="h2">Cliente</h1>
-                            <span id="clienteFactura"><strong>Amine Quiroga</strong></span>
-                        </div>
-                        <div class="col-md-6">
-                            <h1 class="h2">Remitente</h1>
-                            <strong>Aurora Insumos</strong>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <table class="table table-condensed table-bordered table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Descripción</th>
-                                        <th>Cantidad</th>
-                                        <th>Precio unitario</th>
-                                        <th>Total</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {{tablaProductos}}
-                                </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <td colspan="3" class="text-right">Subtotal</td>
-                                        <td>{{subtotal}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="3" class="text-right">Descuento</td>
-                                        <td>{{descuento}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="3" class="text-right">Subtotal con descuento</td>
-                                        <td>{{subtotalConDescuento}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="3" class="text-right">Impuestos</td>
-                                        <td>{{impuestos}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="3" class="text-right">
-                                            <h4>Total</h4>
-                                        </td>
-                                        <td>
-                                            <h4>{{total}}</h4>
-                                        </td>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                        </div>
-                    </div>
+
                 </div>
 
                 <div>
                     <p>
-                        Le hemos enviado su factura por email. Tambien puede descargar su factura <a href="#">aqui</a>
+                        Le hemos enviado su factura por email. Tambien puede descargar su factura <a href="#" onclick="window.print()">aqui</a>
                     </p>
                     <p class="">
                         Recuerde que su producto estara listo para ser <mark>retirado</mark> por nuestro local
@@ -154,9 +89,7 @@
         </div>
     </main>
 
-
-
-
 </body>
+
 
 </html>

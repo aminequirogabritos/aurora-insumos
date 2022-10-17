@@ -4,10 +4,10 @@ const nodemailer = require('nodemailer');
 
 exports.sendEmail = (req, res) => {
     
-        const mailContent = `
+/*         const mailContent = `
             <p> Estiamdo/a ${req.body.firstName}:</p><br>
             <p>Se ha recibido su pedido</p>
-        `;
+        `; */
     
         let transporter = nodemailer.createTransport({
 /*             host: "smtp.ethereal.email",
@@ -30,13 +30,13 @@ exports.sendEmail = (req, res) => {
         });
 
         let mailOptions = {
-            from: '"Aurora Insumos" <zack.ankunding@ethereal.email>', //
+            from: '"Aurora Insumos" <aurora.insumos.sl@gmail.com>', //
             to: req.body.email,
             subject: "Aurora Insumos - Pedido Recibido",
             //text: "If you received this email, congratulations!",
-            html: mailContent // modify later
+            html: req.body.mailContent // modify later
         };
-    
+        
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
                 res.status(500).send(error.message);
