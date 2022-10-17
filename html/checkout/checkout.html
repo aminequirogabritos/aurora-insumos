@@ -17,6 +17,11 @@
 
     <link rel="stylesheet" href="../../css/style.css">
 
+
+    <!-- scripts -->
+    <script defer type="module" src="../../js/checkout/script.js"></script>
+    <script defer type="module" src="../../js/graciasPorSuCompra/graciasPorSuCompra.js"></script>
+
     <title>Checkout</title>
 
 </head>
@@ -45,9 +50,9 @@
                 </h4>
 
 
-                <ul class="list-group">
-
-                    <li class="list-group-item">
+                <ul class="list-group itemList">
+<!-- 
+                    <li class="list-group-item carritoItem">
                         <div class="product-item">
                             <div class="d-flex justify-content-between ">
 
@@ -95,7 +100,7 @@
                                 <span class="text-muted">$200,00</span>
                             </div>
                         </div>
-                    </li>
+                    </li> -->
 
                     <h4 class="mb-3"></h4>
 
@@ -106,7 +111,7 @@
                                     <h6 class="my-0">Total </h6>
                                 </div>
 
-                                <span>$300,00</span>
+                                <span id="totalCarritoSidebar">$0.00</span>
                             </div>
 
                         </div>
@@ -119,6 +124,7 @@
             <div class="col-md-8 order-md-1 mb-6">
 
                 <div id="receiptInfoDiv" style="display: inline;">
+                    
                     <form class="needs-validation active-form" id="receiptInfoForm" onsubmit="return false">
 
                         <h4 class="mb-3">
@@ -320,21 +326,14 @@
                         El pago se realiza en la entrega.
                     </h6>
 
-
                 </div>
 
             </div>
-
-
-
-
 
         </div>
 
     </div>
 
-    <!-- scripts -->
-    <script src="../../js/checkout/script.js"></script>
 
 
 
